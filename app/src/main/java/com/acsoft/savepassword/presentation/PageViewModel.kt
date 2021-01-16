@@ -1,4 +1,4 @@
-package com.acsoft.savepassword.ui.main
+package com.acsoft.savepassword.presentation
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
