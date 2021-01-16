@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.acsoft.savepassword.R
+import com.acsoft.savepassword.databinding.FragmentFavoritesBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -19,6 +20,9 @@ private const val ARG_PARAM2 = "param2"
  */
 class FavoritesFragment : Fragment() {
     // TODO: Rename and change types of parameters
+
+    private lateinit var binding: FragmentFavoritesBinding
+
     private var param1: String? = null
     private var param2: String? = null
 
@@ -28,6 +32,11 @@ class FavoritesFragment : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding = FragmentFavoritesBinding.bind(view)
     }
 
     override fun onCreateView(
