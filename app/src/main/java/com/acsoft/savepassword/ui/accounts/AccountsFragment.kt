@@ -1,4 +1,4 @@
-package com.acsoft.savepassword.ui.passwords
+package com.acsoft.savepassword.ui.accounts
 
 import android.os.Bundle
 import android.util.Log
@@ -11,7 +11,7 @@ import com.acsoft.savepassword.R
 import com.acsoft.savepassword.data.local.AppDatabase
 import com.acsoft.savepassword.data.local.LocalAccountDataSource
 import com.acsoft.savepassword.data.model.Account
-import com.acsoft.savepassword.databinding.FragmentPasswordsBinding
+import com.acsoft.savepassword.databinding.FragmentAccountsBinding
 import com.acsoft.savepassword.presentation.AccountViewModel
 import com.acsoft.savepassword.presentation.AccountViewModelFactory
 import com.acsoft.savepassword.repository.AccountRepositoryImpl
@@ -33,7 +33,7 @@ class PasswordsFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
-    private lateinit var binding: FragmentPasswordsBinding
+    private lateinit var binding: FragmentAccountsBinding
 
     private val viewModel by viewModels<AccountViewModel> {
         AccountViewModelFactory(AccountRepositoryImpl(LocalAccountDataSource(AppDatabase.getDatabase(requireContext()).AccountDao())))
@@ -52,12 +52,12 @@ class PasswordsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_passwords, container, false)
+        return inflater.inflate(R.layout.fragment_accounts, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding = FragmentPasswordsBinding.bind(view)
+        binding = FragmentAccountsBinding.bind(view)
 
         insertAccount()
 
