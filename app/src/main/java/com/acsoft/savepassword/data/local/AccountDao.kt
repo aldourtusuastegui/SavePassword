@@ -1,6 +1,5 @@
 package com.acsoft.savepassword.data.local
 
-import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
@@ -11,7 +10,7 @@ import com.acsoft.savepassword.data.model.Account
 interface AccountDao {
 
     @Query("SELECT * FROM Account")
-    suspend fun getAllAccounts() : LiveData<List<Account>>
+    suspend fun getAllAccounts() : List<Account>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAccount(account: Account)

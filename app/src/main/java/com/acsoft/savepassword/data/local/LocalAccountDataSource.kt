@@ -5,7 +5,7 @@ import com.acsoft.savepassword.data.model.Account
 
 class LocalAccountDataSource(private val accountDao: AccountDao) {
 
-    suspend fun getAllAccounts() : LiveData<List<Account>> {
+    suspend fun getAllAccounts() : List<Account> {
         return accountDao.getAllAccounts()
     }
 

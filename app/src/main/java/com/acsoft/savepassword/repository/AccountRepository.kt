@@ -5,7 +5,7 @@ import com.acsoft.savepassword.data.model.Account
 
 interface AccountRepository {
 
-    suspend fun getAllAccounts() : LiveData<List<Account>>
+    suspend fun getAllAccounts() : List<Account>
     suspend fun insertAccount(account: Account)
 
 }
