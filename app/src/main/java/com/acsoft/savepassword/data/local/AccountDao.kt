@@ -5,12 +5,13 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.acsoft.savepassword.data.model.Account
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface AccountDao {
 
     @Query("SELECT * FROM Account")
-    suspend fun getAllAccounts() : List<Account>
+    fun getAllAccounts() : Flow<List<Account>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAccount(account: Account)

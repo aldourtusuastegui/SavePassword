@@ -1,11 +1,11 @@
 package com.acsoft.savepassword.repository
 
-import androidx.lifecycle.LiveData
 import com.acsoft.savepassword.data.model.Account
+import kotlinx.coroutines.flow.Flow
 
 interface AccountRepository {
 
-    suspend fun getAllAccounts() : List<Account>
+    fun getAllAccounts() : Flow<List<Account>>
     suspend fun insertAccount(account: Account)
 
 }

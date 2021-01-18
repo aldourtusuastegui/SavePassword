@@ -1,11 +1,11 @@
 package com.acsoft.savepassword.data.local
 
-import androidx.lifecycle.LiveData
 import com.acsoft.savepassword.data.model.Account
+import kotlinx.coroutines.flow.Flow
 
 class LocalAccountDataSource(private val accountDao: AccountDao) {
 
-    suspend fun getAllAccounts() : List<Account> {
+    fun getAllAccounts() : Flow<List<Account>> {
         return accountDao.getAllAccounts()
     }
 
