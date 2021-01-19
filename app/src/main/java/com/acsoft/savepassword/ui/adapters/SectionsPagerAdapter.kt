@@ -5,7 +5,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import com.acsoft.savepassword.R
-import com.acsoft.savepassword.ui.favorites.FavoritesFragment
+import com.acsoft.savepassword.ui.accounts.FavoritesFragment
 import com.acsoft.savepassword.ui.accounts.PasswordsFragment
 
 private val TAB_TITLES = arrayOf(

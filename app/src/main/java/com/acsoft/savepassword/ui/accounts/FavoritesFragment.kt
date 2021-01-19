@@ -1,4 +1,4 @@
-package com.acsoft.savepassword.ui.favorites
+package com.acsoft.savepassword.ui.accounts
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
