@@ -9,8 +9,8 @@ import com.acsoft.savepassword.ui.accounts.FavoritesFragment
 import com.acsoft.savepassword.ui.accounts.PasswordsFragment
 
 private val TAB_TITLES = arrayOf(
-        R.string.tab_text_1,
-        R.string.tab_text_2
+        R.string.accounts,
+        R.string.favorites
 )
 
 /**

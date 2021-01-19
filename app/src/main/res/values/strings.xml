@@ -1,11 +1,15 @@
 <resources>
     <string name="app_name">SavePassword</string>
-    <string name="tab_text_1">Tab 1</string>
-    <string name="tab_text_2">Tab 2</string>
+    <string name="accounts">Cuentas</string>
+    <string name="favorites">Favoritas</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string name="new_account_title">Nueva Cuenta</string>
-
+    <string name="title">Titulo</string>
+    <string name="username_or_email">Nombre de usuario o Correo electrónico</string>
+    <string name="password">Contraseña</string>
+    <string name="website">Sitio web</string>
+    <string name="notes">Notas</string>
 
 </resources>
