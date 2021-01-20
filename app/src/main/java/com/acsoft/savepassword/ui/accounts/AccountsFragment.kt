@@ -59,7 +59,6 @@ class PasswordsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentAccountsBinding.bind(view)
 
-        insertAccount()
 
         viewModel.getAccountList().observe(viewLifecycleOwner, { data ->
             data.let {
@@ -70,12 +69,6 @@ class PasswordsFragment : Fragment() {
 
     }
 
-    private fun insertAccount() {
-        val account = Account(0,"alojaa",
-                "jajajajja","sfsfs","sfsf","wrewrr",false)
-
-        viewModel.insertAccount(account)
-    }
 
     companion object {
         /**

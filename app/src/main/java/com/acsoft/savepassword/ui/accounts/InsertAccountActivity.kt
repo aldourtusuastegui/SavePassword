@@ -4,13 +4,24 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.widget.Toast
+import androidx.activity.viewModels
 import com.acsoft.savepassword.R
+import com.acsoft.savepassword.data.local.AppDatabase
+import com.acsoft.savepassword.data.local.LocalAccountDataSource
+import com.acsoft.savepassword.data.model.Account
 import com.acsoft.savepassword.databinding.ActivityInsertAccountBinding
-import com.acsoft.utils.hideKeyboard
+import com.acsoft.savepassword.presentation.AccountViewModel
+import com.acsoft.savepassword.presentation.AccountViewModelFactory
+import com.acsoft.savepassword.repository.AccountRepositoryImpl
 
 class InsertAccountActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityInsertAccountBinding
+
+    private val viewModel by viewModels<AccountViewModel> {
+        AccountViewModelFactory(AccountRepositoryImpl(LocalAccountDataSource(AppDatabase.getDatabase(this).AccountDao())))
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,8 +67,11 @@ class InsertAccountActivity : AppCompatActivity() {
 
 
         binding.saveButton.setOnClickListener {
+            insertAccount()
+            finish()
 
-
+            val titleAccount = binding.titleInputEditText.text.toString()
+            Toast.makeText(this,"Se guardo la cuenta de $titleAccount",Toast.LENGTH_LONG).show()
         }
 
     }
@@ -99,6 +113,19 @@ class InsertAccountActivity : AppCompatActivity() {
 
     }
 
+    private fun insertAccount() {
+
+        val title:String = binding.titleInputEditText.text.toString()
+        val username:String = binding.usernameInputEditText.text.toString()
+        val password:String = binding.passwordInputEditText.text.toString()
+        val website:String = binding.webSiteInputEditText.text.toString()
+        val notes:String = binding.notesInputEditText.text.toString()
+
+        val account = Account(0,title,
+            username,password,website,notes,false)
+
+        viewModel.insertAccount(account)
+    }
 
     override fun onSupportNavigateUp(): Boolean {
         finish()
