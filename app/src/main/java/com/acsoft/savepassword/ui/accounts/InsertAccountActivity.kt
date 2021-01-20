@@ -4,15 +4,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.Log
-import android.view.View
-import android.widget.Toast
-import androidx.core.widget.addTextChangedListener
-import androidx.core.widget.doAfterTextChanged
-import androidx.core.widget.doOnTextChanged
 import com.acsoft.savepassword.R
 import com.acsoft.savepassword.databinding.ActivityInsertAccountBinding
-import com.google.android.material.textfield.TextInputEditText
+import com.acsoft.utils.hideKeyboard
 
 class InsertAccountActivity : AppCompatActivity() {
 
@@ -63,13 +57,6 @@ class InsertAccountActivity : AppCompatActivity() {
 
         binding.saveButton.setOnClickListener {
 
-          /*  val title:String = binding.titleInputEditText.text.toString()
-            val username:String = binding.usernameInputEditText.text.toString()
-            val password:String = binding.passwordInputEditText.text.toString()
-
-            validateTitle(title)
-            validateUsername(username)
-            validatePassword(password)*/
 
         }
 
