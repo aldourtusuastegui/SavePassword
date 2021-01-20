@@ -15,20 +15,26 @@
         android:layout_marginStart="@dimen/layout_margin"
         android:layout_marginEnd="@dimen/layout_margin">
 
+        <!--Tittle-->
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/title_input_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/title"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/title_input_edit_text"
                 android:layout_width="match_parent"
+                android:inputType="text"
                 android:layout_height="wrap_content"/>
 
 
         </com.google.android.material.textfield.TextInputLayout>
 
+        <!--username/email-->
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/username_input_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/input_margin"
@@ -36,13 +42,17 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/username_input_edit_text"
+                android:inputType="text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
 
         </com.google.android.material.textfield.TextInputLayout>
 
+        <!--password-->
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/password_input_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:endIconMode="password_toggle"
@@ -51,6 +61,7 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/password_input_edit_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"/>
@@ -67,7 +78,8 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:inputType="text"/>
 
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -81,17 +93,19 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:inputType="text"/>
 
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
-            android:id="@+id/textButton"
+            android:id="@+id/saveButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/input_margin"
             android:text="Guardar"
+            android:enabled="false"
             style="@style/Widget.MaterialComponents.Button"/>
 
 
