@@ -26,7 +26,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/title_input_edit_text"
                 android:layout_width="match_parent"
-                android:inputType="text"
+                android:inputType="textCapWords|textCapSentences"
                 android:layout_height="wrap_content"/>
 
 

@@ -1,14 +1,12 @@
 package com.acsoft.savepassword.ui.accounts
 
-import android.icu.util.Calendar
-import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
+import android.text.InputType
 import android.text.TextWatcher
-import android.util.Log
 import android.widget.Toast
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import com.acsoft.savepassword.R
 import com.acsoft.savepassword.data.local.AppDatabase
 import com.acsoft.savepassword.data.local.LocalAccountDataSource
@@ -18,18 +16,23 @@ import com.acsoft.savepassword.presentation.AccountViewModel
 import com.acsoft.savepassword.presentation.AccountViewModelFactory
 import com.acsoft.savepassword.repository.AccountRepositoryImpl
 import com.acsoft.utils.getDate
-import java.text.SimpleDateFormat
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
-import java.time.format.FormatStyle
 import java.util.*
+
 
 class InsertAccountActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityInsertAccountBinding
 
     private val viewModel by viewModels<AccountViewModel> {
-        AccountViewModelFactory(AccountRepositoryImpl(LocalAccountDataSource(AppDatabase.getDatabase(this).AccountDao())))
+        AccountViewModelFactory(
+            AccountRepositoryImpl(
+                LocalAccountDataSource(
+                    AppDatabase.getDatabase(
+                        this
+                    ).AccountDao()
+                )
+            )
+        )
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,7 +42,6 @@ class InsertAccountActivity : AppCompatActivity() {
         binding = ActivityInsertAccountBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
-
 
         binding.titleInputEditText.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(charSequence: CharSequence, i: Int, i1: Int, i2: Int) {}
@@ -80,13 +82,13 @@ class InsertAccountActivity : AppCompatActivity() {
             finish()
 
             val titleAccount = binding.titleInputEditText.text.toString()
-            Toast.makeText(this,"Se guardo la cuenta de $titleAccount",Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "Se guardo la cuenta de $titleAccount", Toast.LENGTH_LONG).show()
         }
 
     }
 
 
-    private fun validateTitle(title:String) {
+    private fun validateTitle(title: String) {
         if (title.isEmpty()) {
             binding.titleInputLayout.error = getString(R.string.error_message_enter_title)
         } else {
@@ -94,7 +96,7 @@ class InsertAccountActivity : AppCompatActivity() {
         }
     }
 
-    private fun validateUsername(username:String) {
+    private fun validateUsername(username: String) {
         if (username.isEmpty()) {
             binding.usernameInputLayout.error = getString(R.string.error_message_enter_username)
         } else {
@@ -102,7 +104,7 @@ class InsertAccountActivity : AppCompatActivity() {
         }
     }
 
-    private fun validatePassword(password:String) {
+    private fun validatePassword(password: String) {
         if (password.isEmpty()) {
             binding.passwordInputLayout.error = getString(R.string.error_message_enter_password)
         } else {
@@ -131,8 +133,10 @@ class InsertAccountActivity : AppCompatActivity() {
         val notes:String = binding.notesInputEditText.text.toString()
         val date:String = getDate()
 
-        val account = Account(0,title,
-            username,password,website,notes,false,date)
+        val account = Account(
+            0, title,
+            username, password, website, notes, false, date
+        )
 
         viewModel.insertAccount(account)
     }

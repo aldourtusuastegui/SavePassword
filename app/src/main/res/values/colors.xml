@@ -12,4 +12,12 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="title_color">#212121</color>
+    <color name="subtitle_color">#757575</color>
+    <color name="accent_color">#FFEB3B</color>
+    <color name="dark_primary_color">#0288D1</color>
+    <color name="light_primary_color">#B3E5FC</color>
+    <!--<color name="primary_color">#03A9F4</color>-->
+
 </resources>
