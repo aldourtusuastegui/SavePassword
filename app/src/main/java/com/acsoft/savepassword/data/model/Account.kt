@@ -19,6 +19,8 @@ data class Account(
     @ColumnInfo(name = "notes")
     val notes: String = "",
     @ColumnInfo(name = "favorite")
-    val favorite: Boolean = false
+    val favorite: Boolean = false,
+    @ColumnInfo(name = "date")
+    val date: String = "",
 )
 

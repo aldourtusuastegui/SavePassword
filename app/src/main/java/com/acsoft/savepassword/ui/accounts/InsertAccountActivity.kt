@@ -1,9 +1,12 @@
 package com.acsoft.savepassword.ui.accounts
 
+import android.icu.util.Calendar
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.widget.Toast
 import androidx.activity.viewModels
 import com.acsoft.savepassword.R
@@ -14,6 +17,12 @@ import com.acsoft.savepassword.databinding.ActivityInsertAccountBinding
 import com.acsoft.savepassword.presentation.AccountViewModel
 import com.acsoft.savepassword.presentation.AccountViewModelFactory
 import com.acsoft.savepassword.repository.AccountRepositoryImpl
+import com.acsoft.utils.getDate
+import java.text.SimpleDateFormat
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
+import java.time.format.FormatStyle
+import java.util.*
 
 class InsertAccountActivity : AppCompatActivity() {
 
@@ -120,9 +129,10 @@ class InsertAccountActivity : AppCompatActivity() {
         val password:String = binding.passwordInputEditText.text.toString()
         val website:String = binding.webSiteInputEditText.text.toString()
         val notes:String = binding.notesInputEditText.text.toString()
+        val date:String = getDate()
 
         val account = Account(0,title,
-            username,password,website,notes,false)
+            username,password,website,notes,false,date)
 
         viewModel.insertAccount(account)
     }
