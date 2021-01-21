@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.acsoft.savepassword.R
 import com.acsoft.savepassword.data.local.AppDatabase
@@ -38,7 +39,7 @@ class PasswordsFragment : Fragment() {
     private lateinit var binding: FragmentAccountsBinding
 
     private lateinit var adapter: AccountAdapter
-    private lateinit var linearLayoutManager: LinearLayoutManager
+  //  private lateinit var linearLayoutManager: LinearLayoutManager
 
 
     private val viewModel by viewModels<AccountViewModel> {
@@ -51,6 +52,9 @@ class PasswordsFragment : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+
+        adapter = AccountAdapter()
+
     }
 
     override fun onCreateView(
@@ -65,16 +69,19 @@ class PasswordsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentAccountsBinding.bind(view)
 
-        linearLayoutManager = LinearLayoutManager(requireContext())
-        binding.rvAccount.layoutManager = linearLayoutManager
+        binding.rvAccount.layoutManager = LinearLayoutManager(requireContext())
+        binding.rvAccount.addItemDecoration(
+                DividerItemDecoration(
+                        requireContext(),
+                        DividerItemDecoration.VERTICAL
+                )
+        )
+        binding.rvAccount.adapter = adapter
 
         viewModel.getAccountList().observe(viewLifecycleOwner, { data ->
             data.let {
-                Log.d("NEW", data.last().toString())
-                adapter = AccountAdapter(data)
-                binding.rvAccount.adapter = adapter
+                adapter.setAccountList(data)
             }
-            Log.d("NEW",data.size.toString())
         })
 
     }

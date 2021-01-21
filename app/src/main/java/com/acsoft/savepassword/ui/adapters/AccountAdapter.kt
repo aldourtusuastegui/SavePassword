@@ -8,8 +8,14 @@ import com.acsoft.savepassword.core.BaseViewHolder
 import com.acsoft.savepassword.data.model.Account
 import com.acsoft.savepassword.databinding.AccountItemBinding
 
-class AccountAdapter(private val accountList: List<Account>): RecyclerView.Adapter<BaseViewHolder<*>>() {
+class AccountAdapter: RecyclerView.Adapter<BaseViewHolder<*>>() {
 
+    private var accountList = listOf<Account>()
+
+    fun setAccountList(accountList: List<Account>) {
+        this.accountList = accountList
+        notifyDataSetChanged()
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<*> {
         val itemBinding =
