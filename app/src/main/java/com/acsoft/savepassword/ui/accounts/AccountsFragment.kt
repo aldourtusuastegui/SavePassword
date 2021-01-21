@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.acsoft.savepassword.R
 import com.acsoft.savepassword.data.local.AppDatabase
 import com.acsoft.savepassword.data.local.LocalAccountDataSource
@@ -15,6 +16,7 @@ import com.acsoft.savepassword.databinding.FragmentAccountsBinding
 import com.acsoft.savepassword.presentation.AccountViewModel
 import com.acsoft.savepassword.presentation.AccountViewModelFactory
 import com.acsoft.savepassword.repository.AccountRepositoryImpl
+import com.acsoft.savepassword.ui.adapters.AccountAdapter
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -34,6 +36,10 @@ class PasswordsFragment : Fragment() {
     private var param2: String? = null
 
     private lateinit var binding: FragmentAccountsBinding
+
+    private lateinit var adapter: AccountAdapter
+    private lateinit var linearLayoutManager: LinearLayoutManager
+
 
     private val viewModel by viewModels<AccountViewModel> {
         AccountViewModelFactory(AccountRepositoryImpl(LocalAccountDataSource(AppDatabase.getDatabase(requireContext()).AccountDao())))
@@ -59,10 +65,14 @@ class PasswordsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentAccountsBinding.bind(view)
 
+        linearLayoutManager = LinearLayoutManager(requireContext())
+        binding.rvAccount.layoutManager = linearLayoutManager
 
         viewModel.getAccountList().observe(viewLifecycleOwner, { data ->
             data.let {
-                Log.d("NEW", data.toString())
+                Log.d("NEW", data.last().toString())
+                adapter = AccountAdapter(data)
+                binding.rvAccount.adapter = adapter
             }
             Log.d("NEW",data.size.toString())
         })
