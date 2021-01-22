@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -77,9 +78,19 @@ class PasswordsFragment : Fragment() {
         )
         binding.rvAccount.adapter = adapter
 
-        viewModel.getAccountList().observe(viewLifecycleOwner, { data ->
-            data.let {
-                adapter.setAccountList(data)
+        viewModel.getAccountList().observe(viewLifecycleOwner, { accountList ->
+            accountList.let {
+
+                adapter.setAccountList(accountList)
+
+                if (accountList.isEmpty()) {
+                    binding.rvAccount.visibility = View.GONE
+                    binding.tvEmptyMessage.visibility = View.VISIBLE
+                } else {
+                    binding.rvAccount.visibility = View.VISIBLE
+                    binding.tvEmptyMessage.visibility = View.GONE
+                }
+
             }
         })
 
