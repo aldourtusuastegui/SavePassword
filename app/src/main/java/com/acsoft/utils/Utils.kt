@@ -18,3 +18,7 @@ fun getDate() : String {
     val formatter = SimpleDateFormat("MMMM dd, yyyy HH:mm", Locale.forLanguageTag("es-ES"))
     return formatter.format(date)
 }
+
+fun upperCase(text: String) : String {
+    return text.capitalize()
+}

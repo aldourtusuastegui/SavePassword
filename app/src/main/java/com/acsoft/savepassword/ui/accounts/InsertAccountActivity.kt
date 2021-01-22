@@ -16,6 +16,7 @@ import com.acsoft.savepassword.presentation.AccountViewModel
 import com.acsoft.savepassword.presentation.AccountViewModelFactory
 import com.acsoft.savepassword.repository.AccountRepositoryImpl
 import com.acsoft.utils.getDate
+import com.acsoft.utils.upperCase
 import java.util.*
 
 
@@ -131,7 +132,7 @@ class InsertAccountActivity : AppCompatActivity() {
         val password:String = binding.passwordInputEditText.text.toString()
         val website:String = binding.webSiteInputEditText.text.toString()
         val notes:String = binding.notesInputEditText.text.toString()
-        val date:String = getDate()
+        val date:String = upperCase(getDate())
 
         val account = Account(
             0, title,

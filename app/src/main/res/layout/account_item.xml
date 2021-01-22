@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
@@ -11,21 +11,30 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="@dimen/title"
-        android:text="@string/title"
+        tools:text="Amazon"
         android:textColor="@color/title_color"
-        android:layout_marginStart="@dimen/layout_margin"
-        android:layout_marginTop="@dimen/layout_margin"/>
+        android:layout_marginTop="@dimen/layout_margin"
+        android:layout_marginStart="@dimen/layout_margin"/>
 
     <TextView
         android:id="@+id/tv_username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="@dimen/subtitle"
-        android:text="@string/username_or_email"
+        tools:text="correo@gmail.com"
         android:textColor="@color/subtitle_color"
         android:layout_marginStart="@dimen/layout_margin"
-        android:layout_marginTop="@dimen/layout_margin"
-        android:layout_marginBottom="@dimen/layout_margin"/>
+        android:layout_marginTop="@dimen/layout_margin"/>
+
+    <TextView
+        android:id="@+id/tv_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:textColor="@color/subtitle_color"
+        android:layout_marginEnd="@dimen/layout_margin"
+        android:layout_marginBottom="@dimen/layout_margin"
+        tools:text="Enero 21, 2021"/>
 
 
 </LinearLayout>

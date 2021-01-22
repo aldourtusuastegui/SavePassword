@@ -39,7 +39,6 @@ class PasswordsFragment : Fragment() {
     private lateinit var binding: FragmentAccountsBinding
 
     private lateinit var adapter: AccountAdapter
-  //  private lateinit var linearLayoutManager: LinearLayoutManager
 
 
     private val viewModel by viewModels<AccountViewModel> {

@@ -38,6 +38,7 @@ class AccountAdapter: RecyclerView.Adapter<BaseViewHolder<*>>() {
         override fun bind(item: Account) {
             binding.tvTitle.text = item.title
             binding.tvUsername.text = item.name
+            binding.tvDate.text = item.date
         }
 
     }
