@@ -4,37 +4,69 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:orientation="horizontal">
+
 
     <TextView
-        android:id="@+id/tv_title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="@dimen/title"
-        tools:text="Amazon"
-        android:textColor="@color/title_color"
-        android:layout_marginTop="@dimen/layout_margin"
-        android:layout_marginStart="@dimen/layout_margin"/>
-
-    <TextView
-        android:id="@+id/tv_username"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="@dimen/subtitle"
-        tools:text="correo@gmail.com"
-        android:textColor="@color/subtitle_color"
-        android:layout_marginStart="@dimen/layout_margin"
-        android:layout_marginTop="@dimen/layout_margin"/>
-
-    <TextView
-        android:id="@+id/tv_date"
+        android:id="@+id/tv_mark"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="right"
-        android:textColor="@color/subtitle_color"
-        android:layout_marginEnd="@dimen/layout_margin"
-        android:layout_marginBottom="@dimen/layout_margin"
-        tools:text="Enero 21, 2021"/>
+        tools:text="A"
+        android:textSize="30sp"
+        android:layout_marginStart="@dimen/layout_margin"
+        android:layout_gravity="center"
+        android:background="@drawable/rounded_textview"
+        android:textColor="@android:color/white"
+        android:backgroundTint="@color/primary_dark_color"
+        android:gravity="center"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/title"
+                tools:text="Amazon"
+                android:textColor="@color/title_color"
+                android:layout_marginTop="@dimen/layout_margin"
+                android:layout_marginStart="@dimen/layout_margin"/>
+
+            <TextView
+                android:id="@+id/tv_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/subtitle"
+                tools:text="correo@gmail.com"
+                android:textColor="@color/subtitle_color"
+                android:layout_marginStart="@dimen/layout_margin"
+                android:layout_marginTop="@dimen/layout_margin"/>
+
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:textColor="@color/subtitle_color"
+                android:layout_marginEnd="@dimen/layout_margin"
+                android:layout_marginBottom="@dimen/layout_margin"
+                tools:text="Enero 21, 2021"/>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
 
 
 </LinearLayout>
