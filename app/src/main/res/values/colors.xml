@@ -20,4 +20,12 @@
     <color name="light_primary_color">#B3E5FC</color>
     <!--<color name="primary_color">#03A9F4</color>-->
 
+    <!--letters colors-->
+    <color name="color_one">#42a5f5</color>
+    <color name="color_two">#F44336</color>
+    <color name="color_three">#9C27B0</color>
+    <color name="color_four">#009688</color>
+    <color name="color_five">#E91E63</color>
+
+
 </resources>
