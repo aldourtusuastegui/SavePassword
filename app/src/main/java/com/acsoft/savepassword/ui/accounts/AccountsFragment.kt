@@ -32,7 +32,7 @@ private const val ARG_PARAM2 = "param2"
  * Use the [PasswordsFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class PasswordsFragment : Fragment() {
+class PasswordsFragment : Fragment(),AccountAdapter.OnAccountClickListener {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -53,7 +53,7 @@ class PasswordsFragment : Fragment() {
             param2 = it.getString(ARG_PARAM2)
         }
 
-        adapter = AccountAdapter()
+        adapter = AccountAdapter(this)
 
     }
 
@@ -115,5 +115,9 @@ class PasswordsFragment : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+
+    override fun onAccountClick(account: Account) {
+        Toast.makeText(requireContext(),"tocaste la cuenta ${account.name}",Toast.LENGTH_SHORT).show()
     }
 }

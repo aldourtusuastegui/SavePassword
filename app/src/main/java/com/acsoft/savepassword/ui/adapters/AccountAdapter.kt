@@ -6,13 +6,14 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.acsoft.savepassword.R
 import com.acsoft.savepassword.core.BaseViewHolder
 import com.acsoft.savepassword.data.model.Account
 import com.acsoft.savepassword.databinding.AccountItemBinding
 
-class AccountAdapter: RecyclerView.Adapter<BaseViewHolder<*>>() {
+class AccountAdapter(private val itemClickListener: OnAccountClickListener): RecyclerView.Adapter<BaseViewHolder<*>>() {
 
     private var accountList = listOf<Account>()
 
@@ -24,7 +25,16 @@ class AccountAdapter: RecyclerView.Adapter<BaseViewHolder<*>>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<*> {
         val itemBinding =
                 AccountItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return AccountViewHolder(itemBinding, parent.context)
+
+        val holder = AccountViewHolder(itemBinding, parent.context)
+
+        itemBinding.root.setOnClickListener {
+            val position = holder.adapterPosition.takeIf { it != DiffUtil.DiffResult.NO_POSITION }
+                    ?: return@setOnClickListener
+            itemClickListener.onAccountClick(accountList[position])
+        }
+
+        return holder
     }
 
     override fun onBindViewHolder(holder: BaseViewHolder<*>, position: Int) {
@@ -70,6 +80,10 @@ class AccountAdapter: RecyclerView.Adapter<BaseViewHolder<*>>() {
             }
         }
 
+    }
+
+    interface OnAccountClickListener {
+        fun onAccountClick(account: Account)
     }
 
 }
