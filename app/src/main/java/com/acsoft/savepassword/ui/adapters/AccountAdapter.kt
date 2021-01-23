@@ -46,42 +46,27 @@ class AccountAdapter: RecyclerView.Adapter<BaseViewHolder<*>>() {
             binding.tvUsername.text = item.name
             binding.tvDate.text = item.date
             binding.tvMark.text = item.title.first().toString().capitalize()
-            Log.d("NEW",adapterPosition.toString())
             circleColor(binding,context,adapterPosition)
         }
     }
 
     private fun circleColor(binding : AccountItemBinding,context: Context,position: Int) {
 
-        var color :Int = position
-        if (position>=5) {
-            color = 0
-        }
-
-        when (color) {
+        when (position%4) {
             0 -> {
                 binding.tvMark.backgroundTintList = ContextCompat.getColorStateList(context, R.color.color_one)
-                color.inc()
             }
 
             1 -> {
                 binding.tvMark.backgroundTintList = ContextCompat.getColorStateList(context, R.color.color_two)
-                color.inc()
             }
 
             2 -> {
                 binding.tvMark.backgroundTintList = ContextCompat.getColorStateList(context, R.color.color_three)
-                color.inc()
             }
 
             3 -> {
                 binding.tvMark.backgroundTintList = ContextCompat.getColorStateList(context, R.color.color_four)
-                color.inc()
-            }
-
-            4 -> {
-                binding.tvMark.backgroundTintList = ContextCompat.getColorStateList(context, R.color.color_five)
-                color.inc()
             }
         }
 
