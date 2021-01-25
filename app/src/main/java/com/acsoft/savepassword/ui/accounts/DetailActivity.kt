@@ -1,17 +1,15 @@
 package com.acsoft.savepassword.ui.accounts
 
-import android.content.ClipData
-import android.content.ClipboardManager
-import android.content.Context
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.widget.Toast
 import com.acsoft.savepassword.R
 import com.acsoft.savepassword.data.model.Account
 import com.acsoft.savepassword.databinding.ActivityDetailBinding
+import com.acsoft.utils.copyToClipboard
 
 class DetailActivity : AppCompatActivity() {
 
@@ -29,7 +27,7 @@ class DetailActivity : AppCompatActivity() {
         setContentView(view)
 
         init()
-        copyEmail()
+        copyToClipboard()
 
 
     }
@@ -39,7 +37,7 @@ class DetailActivity : AppCompatActivity() {
         isFavorite = account!!.favorite
 
         binding.tvAccount.text = account!!.account
-        binding.tvName.text = account!!.email
+        binding.tvEmail.text = account!!.email
         binding.tvPassword.text = account!!.password
 
         if (account!!.website.isEmpty()) {
@@ -58,14 +56,33 @@ class DetailActivity : AppCompatActivity() {
 
     }
 
-    private fun copyEmail() {
+    private fun copyToClipboard() {
+
+        binding.llAccount.setOnClickListener {
+            val account = binding.tvAccount.text.toString()
+            copyToClipboard(it,this,account)
+        }
 
         binding.llEmail.setOnClickListener {
-            val clipboardManager = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
-            val clipData = ClipData.newPlainText("text", binding.tvAccount.text.toString())
-            clipboardManager.setPrimaryClip(clipData)
-            Toast.makeText(this, "Text copied to clipboard", Toast.LENGTH_LONG).show()
+            val email = binding.tvEmail.text.toString()
+            copyToClipboard(it,this,email)
         }
+
+        binding.llPassword.setOnClickListener {
+            val password = binding.tvPassword.text.toString()
+            copyToClipboard(it,this,password)
+        }
+
+        binding.llWebsite.setOnClickListener {
+            val website = binding.tvWebsite.text.toString()
+            copyToClipboard(it,this,website)
+        }
+
+        binding.llNotes.setOnClickListener {
+            val notes = binding.tvNotes.text.toString()
+            copyToClipboard(it,this,notes)
+        }
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

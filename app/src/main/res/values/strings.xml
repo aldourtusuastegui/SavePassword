@@ -24,5 +24,6 @@
 
     <!--empty list messages-->
     <string name="empty_list_message">No hay elementos para mostrar</string>
+    <string name="copied_clipboard">Copiado al portapapeles</string>
 
 </resources>
