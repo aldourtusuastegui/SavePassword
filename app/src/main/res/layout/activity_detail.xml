@@ -10,30 +10,90 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="@dimen/default_margin"
-        android:layout_marginStart="@dimen/default_margin"
-        android:layout_marginEnd="@dimen/default_margin">
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/default_margin">
 
-        <TextView
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/title"
-            android:textSize="@dimen/title"
-            android:textColor="@color/title_color"
-            android:textStyle="bold"/>
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/default_margin"
+            android:layout_marginEnd="@dimen/default_margin"
+            android:src="@drawable/ic_account"
+            app:tint="@color/primary_color" />
 
-        <TextView
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/subtitle_color"
-            android:textSize="@dimen/subtitle"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="@dimen/default_margin"
-            android:text="Amazon"/>
+            android:layout_marginStart="@dimen/default_margin"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="aldo.urtu@gmai.com"
+                android:textSize="@dimen/letter_size_16"
+                android:textColor="@color/title_color"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/subtitle_color"
+                android:textSize="@dimen/subtitle"
+                android:layout_marginTop="@dimen/margin_size_5"
+                android:layout_marginBottom="@dimen/default_margin"
+                android:text="@string/account"/>
+
+        </LinearLayout>
 
 
     </LinearLayout>
 
+
+    <!--Password-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/default_margin">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/default_margin"
+            android:layout_marginEnd="@dimen/default_margin"
+            android:src="@drawable/ic_lock"
+            app:tint="@color/primary_color" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/default_margin"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="aldo.urtu@gmai.com"
+                app:endIconMode="password_toggle"
+                android:textSize="@dimen/letter_size_16"
+                android:textColor="@color/title_color"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/subtitle_color"
+                android:textSize="@dimen/subtitle"
+                android:layout_marginTop="@dimen/margin_size_5"
+                android:layout_marginBottom="@dimen/default_margin"
+                android:text="@string/password"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
 
 </LinearLayout>

@@ -7,7 +7,7 @@
 
     <string name="screen_new_account_title">Nueva Cuenta</string>
     <string name="screen_detail_title">Detalle</string>
-    <string name="title">Titulo</string>
+    <string name="account">Cuenta</string>
     <string name="username_or_email">Nombre de usuario o Correo electrónico</string>
     <string name="password">Contraseña</string>
     <string name="website">Sitio web</string>

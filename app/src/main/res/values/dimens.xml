@@ -13,5 +13,7 @@
     <dimen name="subtitle">16sp</dimen>
 
     <dimen name="icon_size">30dp</dimen>
+    <dimen name="letter_size_16">16sp</dimen>
+    <dimen name="margin_size_5">5dp</dimen>
 
 </resources>
