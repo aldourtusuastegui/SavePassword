@@ -29,7 +29,6 @@ class DetailActivity : AppCompatActivity() {
         init()
         copyToClipboard()
 
-
     }
 
     private fun init() {
@@ -39,6 +38,7 @@ class DetailActivity : AppCompatActivity() {
         binding.tvAccount.text = account!!.account
         binding.tvEmail.text = account!!.email
         binding.tvPassword.text = account!!.password
+        binding.tvDate.text = account!!.date
 
         if (account!!.website.isEmpty()) {
             binding.llWebsite.visibility = View.GONE
