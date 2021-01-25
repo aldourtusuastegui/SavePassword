@@ -1,8 +1,6 @@
 package com.acsoft.savepassword.ui.adapters
 
 import android.content.Context
-import android.graphics.Color
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
@@ -52,10 +50,10 @@ class AccountAdapter(private val itemClickListener: OnAccountClickListener): Rec
     private inner class AccountViewHolder(val binding : AccountItemBinding, val context: Context) :
             BaseViewHolder<Account>(binding.root) {
         override fun bind(item: Account) {
-            binding.tvTitle.text = item.title
-            binding.tvUsername.text = item.name
+            binding.tvTitle.text = item.account
+            binding.tvUsername.text = item.email
             binding.tvDate.text = item.date
-            binding.tvMark.text = item.title.first().toString().capitalize()
+            binding.tvMark.text = item.account.first().toString().capitalize()
             circleColor(binding,context,adapterPosition)
         }
     }

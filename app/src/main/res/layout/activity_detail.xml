@@ -7,6 +7,7 @@
     android:orientation="vertical"
     tools:context=".ui.accounts.DetailActivity">
 
+    <!--Account-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -30,9 +31,10 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/tv_account"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="aldo.urtu@gmai.com"
+                tools:text="Gmail"
                 android:textSize="@dimen/letter_size_16"
                 android:textColor="@color/title_color"/>
 
@@ -44,6 +46,52 @@
                 android:layout_marginTop="@dimen/margin_size_5"
                 android:layout_marginBottom="@dimen/default_margin"
                 android:text="@string/account"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+    <!--username/email-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/default_margin">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/default_margin"
+            android:layout_marginEnd="@dimen/default_margin"
+            android:src="@drawable/ic_email"
+            app:tint="@color/primary_color" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/default_margin"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="correo@gmail.com"
+                android:textSize="@dimen/letter_size_16"
+                android:textColor="@color/title_color"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/subtitle_color"
+                android:textSize="@dimen/subtitle"
+                android:layout_marginTop="@dimen/margin_size_5"
+                android:layout_marginBottom="@dimen/default_margin"
+                android:text="@string/email"/>
 
         </LinearLayout>
 
@@ -75,10 +123,10 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/tv_password"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="aldo.urtu@gmai.com"
-                app:endIconMode="password_toggle"
+                tools:text="14ERTYdfg1"
                 android:textSize="@dimen/letter_size_16"
                 android:textColor="@color/title_color"/>
 

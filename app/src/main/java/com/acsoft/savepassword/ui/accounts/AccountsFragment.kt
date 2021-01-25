@@ -2,6 +2,7 @@ package com.acsoft.savepassword.ui.accounts
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Parcelable
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -121,6 +122,7 @@ class PasswordsFragment : Fragment(),AccountAdapter.OnAccountClickListener {
 
     override fun onAccountClick(account: Account) {
         val intent = Intent(activity,DetailActivity::class.java)
+        intent.putExtra("account",account)
         startActivity(intent)
     }
 }

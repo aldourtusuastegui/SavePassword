@@ -3,17 +3,16 @@ package com.acsoft.savepassword.ui.accounts
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
-import android.view.MenuInflater
 import android.view.MenuItem
-import android.widget.Toast
 import com.acsoft.savepassword.R
+import com.acsoft.savepassword.data.model.Account
 import com.acsoft.savepassword.databinding.ActivityDetailBinding
-import com.acsoft.savepassword.databinding.FragmentFavoritesBinding
 
 class DetailActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityDetailBinding
 
+    private var account: Account? = null
     private var isFavorite: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,8 +23,17 @@ class DetailActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
+        init()
 
+    }
 
+    private fun init() {
+        account = intent.getParcelableExtra("account")
+        isFavorite = account!!.favorite
+
+        binding.tvAccount.text = account!!.account
+        binding.tvName.text = account!!.email
+        binding.tvPassword.text = account!!.password
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
