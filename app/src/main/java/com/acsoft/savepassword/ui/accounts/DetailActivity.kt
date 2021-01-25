@@ -1,9 +1,14 @@
 package com.acsoft.savepassword.ui.accounts
 
+import android.content.ClipData
+import android.content.ClipboardManager
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
+import android.widget.Toast
 import com.acsoft.savepassword.R
 import com.acsoft.savepassword.data.model.Account
 import com.acsoft.savepassword.databinding.ActivityDetailBinding
@@ -24,6 +29,8 @@ class DetailActivity : AppCompatActivity() {
         setContentView(view)
 
         init()
+        copyEmail()
+
 
     }
 
@@ -34,6 +41,31 @@ class DetailActivity : AppCompatActivity() {
         binding.tvAccount.text = account!!.account
         binding.tvName.text = account!!.email
         binding.tvPassword.text = account!!.password
+
+        if (account!!.website.isEmpty()) {
+            binding.llWebsite.visibility = View.GONE
+        } else {
+            binding.llWebsite.visibility = View.VISIBLE
+            binding.tvWebsite.text = account!!.website
+        }
+
+        if (account!!.notes.isEmpty()) {
+            binding.llNotes.visibility = View.GONE
+        } else {
+            binding.llNotes.visibility = View.VISIBLE
+            binding.tvNotes.text = account!!.notes
+        }
+
+    }
+
+    private fun copyEmail() {
+
+        binding.llEmail.setOnClickListener {
+            val clipboardManager = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+            val clipData = ClipData.newPlainText("text", binding.tvAccount.text.toString())
+            clipboardManager.setPrimaryClip(clipData)
+            Toast.makeText(this, "Text copied to clipboard", Toast.LENGTH_LONG).show()
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
