@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         tools:text="A"
         android:textSize="30sp"
-        android:layout_marginStart="@dimen/layout_margin"
+        android:layout_marginStart="@dimen/default_margin"
         android:layout_gravity="center"
         android:background="@drawable/rounded_textview"
         android:textColor="@android:color/white"
@@ -38,8 +38,8 @@
                 android:textSize="@dimen/title"
                 tools:text="Amazon"
                 android:textColor="@color/title_color"
-                android:layout_marginTop="@dimen/layout_margin"
-                android:layout_marginStart="@dimen/layout_margin"/>
+                android:layout_marginTop="@dimen/default_margin"
+                android:layout_marginStart="@dimen/default_margin"/>
 
             <TextView
                 android:id="@+id/tv_username"
@@ -48,8 +48,8 @@
                 android:textSize="@dimen/subtitle"
                 tools:text="correo@gmail.com"
                 android:textColor="@color/subtitle_color"
-                android:layout_marginStart="@dimen/layout_margin"
-                android:layout_marginTop="@dimen/layout_margin"/>
+                android:layout_marginStart="@dimen/default_margin"
+                android:layout_marginTop="@dimen/default_margin"/>
 
             <TextView
                 android:id="@+id/tv_date"
@@ -57,8 +57,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
                 android:textColor="@color/subtitle_color"
-                android:layout_marginEnd="@dimen/layout_margin"
-                android:layout_marginBottom="@dimen/layout_margin"
+                android:layout_marginEnd="@dimen/default_margin"
+                android:layout_marginBottom="@dimen/default_margin"
                 tools:text="Enero 21, 2021"/>
 
 
