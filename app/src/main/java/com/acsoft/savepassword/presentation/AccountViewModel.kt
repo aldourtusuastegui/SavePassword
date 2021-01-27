@@ -18,6 +18,12 @@ class AccountViewModel(private val accountRepository: AccountRepository) : ViewM
         }
     }
 
+    fun setFavorite(id: Int, isFavorite: Boolean) {
+        viewModelScope.launch {
+            accountRepository.setFavorite(id,isFavorite)
+        }
+    }
+
 }
 
 

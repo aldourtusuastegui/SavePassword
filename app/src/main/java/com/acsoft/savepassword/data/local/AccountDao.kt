@@ -1,9 +1,6 @@
 package com.acsoft.savepassword.data.local
 
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 import com.acsoft.savepassword.data.model.Account
 import kotlinx.coroutines.flow.Flow
 
@@ -16,5 +13,10 @@ interface AccountDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAccount(account: Account)
 
+    @Update
+    suspend fun updateAccount(account: Account)
+
+    @Query("UPDATE Account SET favorite = :isFavorite where id = :id")
+    suspend fun setFavorite(id:Int,isFavorite: Boolean)
 
 }

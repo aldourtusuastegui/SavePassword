@@ -6,14 +6,33 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import androidx.activity.viewModels
+import androidx.core.view.get
 import com.acsoft.savepassword.R
+import com.acsoft.savepassword.data.local.AppDatabase
+import com.acsoft.savepassword.data.local.LocalAccountDataSource
 import com.acsoft.savepassword.data.model.Account
 import com.acsoft.savepassword.databinding.ActivityDetailBinding
+import com.acsoft.savepassword.presentation.AccountViewModel
+import com.acsoft.savepassword.presentation.AccountViewModelFactory
+import com.acsoft.savepassword.repository.AccountRepositoryImpl
 import com.acsoft.utils.copyToClipboard
 
 class DetailActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityDetailBinding
+
+    private val viewModel by viewModels<AccountViewModel> {
+        AccountViewModelFactory(
+                AccountRepositoryImpl(
+                        LocalAccountDataSource(
+                                AppDatabase.getDatabase(
+                                        this
+                                ).AccountDao()
+                        )
+                )
+        )
+    }
 
     private var account: Account? = null
     private var isFavorite: Boolean = false
@@ -87,6 +106,13 @@ class DetailActivity : AppCompatActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu,menu)
+
+        if (isFavorite) {
+            menu?.get(0)?.setIcon(R.drawable.ic_favorite_enabled)
+        } else {
+            menu?.get(0)?.setIcon(R.drawable.ic_favorite_disabled)
+        }
+
         return true
     }
 
@@ -95,9 +121,11 @@ class DetailActivity : AppCompatActivity() {
             R.id.item_favorite -> {
                 isFavorite = if (isFavorite) {
                     item.setIcon(R.drawable.ic_favorite_disabled)
+                    viewModel.setFavorite(account!!.id,false)
                     false
                 } else {
                     item.setIcon(R.drawable.ic_favorite_enabled)
+                    viewModel.setFavorite(account!!.id,true)
                     true
                 }
                 true

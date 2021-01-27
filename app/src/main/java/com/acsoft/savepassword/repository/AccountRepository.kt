@@ -6,6 +6,11 @@ import kotlinx.coroutines.flow.Flow
 interface AccountRepository {
 
     fun getAllAccounts() : Flow<List<Account>>
+
     suspend fun insertAccount(account: Account)
+
+    suspend fun updateAccount(account: Account)
+
+    suspend fun setFavorite(id: Int,isFavorite: Boolean)
 
 }

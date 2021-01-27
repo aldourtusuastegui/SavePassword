@@ -13,4 +13,13 @@ class AccountRepositoryImpl(private val localDataSource: LocalAccountDataSource)
     override suspend fun insertAccount(account: Account) {
         localDataSource.insertAccount(account)
     }
+
+    override suspend fun updateAccount(account: Account) {
+        TODO("Not yet implemented")
+    }
+
+    override suspend fun setFavorite(id: Int, isFavorite: Boolean) {
+        localDataSource.setFavorite(id,isFavorite)
+    }
+
 }

@@ -12,4 +12,12 @@ class LocalAccountDataSource(private val accountDao: AccountDao) {
     suspend fun insertAccount(account: Account) {
         accountDao.insertAccount(account)
     }
+
+    suspend fun updateAccount(account: Account) {
+        accountDao.updateAccount(account)
+    }
+
+    suspend fun setFavorite(id: Int,isFavorite: Boolean) {
+        accountDao.setFavorite(id,isFavorite)
+    }
 }
