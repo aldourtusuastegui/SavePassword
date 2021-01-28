@@ -34,6 +34,8 @@ class InsertAccountActivity : AppCompatActivity() {
         )
     }
 
+    private var screenName: String? = null
+    private var action: String? = null
     private var account: Account? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -51,6 +53,9 @@ class InsertAccountActivity : AppCompatActivity() {
     }
 
     private fun init() {
+
+        action = intent.getStringExtra("ACTION")
+
         account = intent.getParcelableExtra(AppConstants.ACCOUNT)
         account.let {
             binding.accountInputEditText.setText(account?.account)
@@ -96,11 +101,18 @@ class InsertAccountActivity : AppCompatActivity() {
         })
 
         binding.saveButton.setOnClickListener {
-            insertAccount()
-            finish()
 
             val titleAccount = binding.accountInputEditText.text.toString()
-            Toast.makeText(this, "Se guardo la cuenta de $titleAccount", Toast.LENGTH_LONG).show()
+            if (action==AppConstants.INSERT) {
+                insertAccount()
+                Toast.makeText(this, "Se guardo la cuenta de $titleAccount", Toast.LENGTH_LONG).show()
+            } else if (action==AppConstants.UPDATE) {
+                updateAccount()
+                Toast.makeText(this, "Se actualizo la cuenta de $titleAccount", Toast.LENGTH_LONG).show()
+            }
+
+            finish()
+
         }
     }
 
@@ -155,6 +167,22 @@ class InsertAccountActivity : AppCompatActivity() {
         )
 
         viewModel.insertAccount(account)
+    }
+
+    private fun updateAccount() {
+
+        val title:String = binding.accountInputEditText.text.toString()
+        val username:String = binding.emailInputEditText.text.toString()
+        val password:String = binding.passwordInputEditText.text.toString()
+        val website:String = binding.webSiteInputEditText.text.toString()
+        val notes:String = binding.notesInputEditText.text.toString()
+        val date:String = upperCase(getDateFormat())
+
+        val update = Account(
+             account!!.id,title,username,password,website,notes,false,date)
+
+        viewModel.updateAccount(update)
+
     }
 
     override fun onSupportNavigateUp(): Boolean {

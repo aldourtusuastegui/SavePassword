@@ -24,6 +24,12 @@ class AccountViewModel(private val accountRepository: AccountRepository) : ViewM
         }
     }
 
+    fun updateAccount(account: Account) {
+        viewModelScope.launch {
+            accountRepository.insertAccount(account)
+        }
+    }
+
 }
 
 
