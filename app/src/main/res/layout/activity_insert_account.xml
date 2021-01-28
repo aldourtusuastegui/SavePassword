@@ -15,16 +15,16 @@
         android:layout_marginStart="@dimen/default_margin"
         android:layout_marginEnd="@dimen/default_margin">
 
-        <!--Tittle-->
+        <!--Account-->
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/title_input_layout"
+            android:id="@+id/account_input_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/account"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/title_input_edit_text"
+                android:id="@+id/account_input_edit_text"
                 android:layout_width="match_parent"
                 android:inputType="textCapWords|textCapSentences"
                 android:layout_height="wrap_content"/>
@@ -34,7 +34,7 @@
 
         <!--username/email-->
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/username_input_layout"
+            android:id="@+id/email_input_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/input_margin"
@@ -42,7 +42,7 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/username_input_edit_text"
+                android:id="@+id/email_input_edit_text"
                 android:inputType="text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>

@@ -1,11 +1,13 @@
 package com.acsoft.savepassword.ui.accounts
 
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.core.view.get
 import com.acsoft.savepassword.R
@@ -129,6 +131,18 @@ class DetailActivity : AppCompatActivity() {
                     viewModel.setFavorite(account!!.id,true)
                     true
                 }
+                true
+            }
+            R.id.item_share -> {
+                true
+            }
+            R.id.item_edit -> {
+                val intent = Intent(this,InsertAccountActivity::class.java)
+                intent.putExtra(AppConstants.ACCOUNT,account)
+                startActivity(intent)
+                true
+            }
+            R.id.item_delete -> {
                 true
             }
             else -> super.onOptionsItemSelected(item)
