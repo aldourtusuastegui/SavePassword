@@ -18,11 +18,12 @@ fun View.hideKeyboard(context: Context) {
 }
 
 
-fun getDate() : String {
+fun getDateFormat() : String {
     val date = Date()
     val formatter = SimpleDateFormat("MMMM dd, yyyy HH:mm", Locale.forLanguageTag("es-ES"))
     return formatter.format(date)
 }
+
 
 fun upperCase(text: String) : String {
     return text.capitalize()

@@ -14,6 +14,7 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.acsoft.savepassword.R
+import com.acsoft.savepassword.application.AppConstants
 import com.acsoft.savepassword.data.local.AppDatabase
 import com.acsoft.savepassword.data.local.LocalAccountDataSource
 import com.acsoft.savepassword.data.model.Account
@@ -122,7 +123,7 @@ class PasswordsFragment : Fragment(),AccountAdapter.OnAccountClickListener {
 
     override fun onAccountClick(account: Account) {
         val intent = Intent(activity,DetailActivity::class.java)
-        intent.putExtra("account",account)
+        intent.putExtra(AppConstants.ACCOUNT,account)
         startActivity(intent)
     }
 }

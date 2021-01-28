@@ -9,6 +9,7 @@ import android.view.View
 import androidx.activity.viewModels
 import androidx.core.view.get
 import com.acsoft.savepassword.R
+import com.acsoft.savepassword.application.AppConstants
 import com.acsoft.savepassword.data.local.AppDatabase
 import com.acsoft.savepassword.data.local.LocalAccountDataSource
 import com.acsoft.savepassword.data.model.Account
@@ -51,7 +52,7 @@ class DetailActivity : AppCompatActivity() {
     }
 
     private fun init() {
-        account = intent.getParcelableExtra("account")
+        account = intent.getParcelableExtra(AppConstants.ACCOUNT)
         isFavorite = account!!.favorite
 
         binding.tvAccount.text = account!!.account
