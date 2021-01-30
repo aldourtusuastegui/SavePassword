@@ -5,6 +5,7 @@ import android.os.Bundle
 import com.google.android.material.tabs.TabLayout
 import androidx.viewpager.widget.ViewPager
 import androidx.appcompat.app.AppCompatActivity
+import com.acsoft.savepassword.application.AppConstants
 import com.acsoft.savepassword.ui.accounts.InsertAccountActivity
 import com.acsoft.savepassword.ui.adapters.SectionsPagerAdapter
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -24,6 +25,7 @@ class MainActivity : AppCompatActivity() {
         val fab: FloatingActionButton = findViewById(R.id.fab)
         fab.setOnClickListener {
             val intent = Intent(this, InsertAccountActivity::class.java)
+            intent.putExtra(AppConstants.ACTION, AppConstants.INSERT)
             startActivity(intent)
         }
 

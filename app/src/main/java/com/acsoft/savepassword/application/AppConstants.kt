@@ -7,4 +7,5 @@ object AppConstants {
     const val INSERT = "INSERT"
     const val UPDATE = "UPDATE"
 
+
 }

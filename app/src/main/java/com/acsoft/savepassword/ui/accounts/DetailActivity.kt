@@ -148,7 +148,6 @@ class DetailActivity : AppCompatActivity() {
             }
             R.id.item_edit -> {
                 val intent = Intent(this,InsertAccountActivity::class.java)
-                intent.putExtra("SCREEN_NAME","Editar Cuenta")
                 intent.putExtra(AppConstants.ACTION,AppConstants.UPDATE)
                 intent.putExtra(AppConstants.ACCOUNT,account)
                 startActivityForResult(intent,requestCode)

@@ -36,7 +36,6 @@ class InsertAccountActivity : AppCompatActivity() {
         )
     }
 
-    private var screenName: String? = null
     private var action: String? = null
     private var account: Account? = null
 
@@ -49,14 +48,23 @@ class InsertAccountActivity : AppCompatActivity() {
         setContentView(view)
 
         init()
+        setTitleActivity()
         listeners()
         validateForm()
 
     }
 
+    private fun setTitleActivity() {
+        title = if (action == AppConstants.UPDATE) {
+            getString(R.string.screen_edit_account_title)
+        } else {
+            getString(R.string.screen_new_account_title)
+        }
+    }
+
     private fun init() {
 
-        action = intent.getStringExtra("ACTION")
+        action = intent.getStringExtra(AppConstants.ACTION)
 
         account = intent.getParcelableExtra(AppConstants.ACCOUNT)
         account.let {
