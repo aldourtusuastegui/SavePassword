@@ -1,5 +1,7 @@
 package com.acsoft.savepassword.ui.accounts
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -112,7 +114,6 @@ class InsertAccountActivity : AppCompatActivity() {
             }
 
             finish()
-
         }
     }
 
@@ -182,6 +183,10 @@ class InsertAccountActivity : AppCompatActivity() {
              account!!.id,title,username,password,website,notes,false,date)
 
         viewModel.updateAccount(update)
+
+        val intent = Intent()
+        intent.putExtra(AppConstants.ACCOUNT,update)
+        setResult(Activity.RESULT_OK, intent)
 
     }
 

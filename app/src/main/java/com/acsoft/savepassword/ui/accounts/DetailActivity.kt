@@ -1,15 +1,18 @@
 package com.acsoft.savepassword.ui.accounts
 
 
+import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.core.view.get
+import androidx.lifecycle.lifecycleScope
 import com.acsoft.savepassword.R
 import com.acsoft.savepassword.application.AppConstants
 import com.acsoft.savepassword.data.local.AppDatabase
@@ -24,6 +27,8 @@ import com.acsoft.utils.copyToClipboard
 class DetailActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityDetailBinding
+
+    private val requestCode = 0
 
     private val viewModel by viewModels<AccountViewModel> {
         AccountViewModelFactory(
@@ -55,25 +60,30 @@ class DetailActivity : AppCompatActivity() {
 
     private fun init() {
         account = intent.getParcelableExtra(AppConstants.ACCOUNT)
-        isFavorite = account!!.favorite
+        updateData(account!!)
+    }
 
-        binding.tvAccount.text = account!!.account
-        binding.tvEmail.text = account!!.email
-        binding.tvPassword.text = account!!.password
-        binding.tvDate.text = account!!.date
+    private fun updateData(account: Account) {
 
-        if (account!!.website.isEmpty()) {
+        isFavorite = account.favorite
+
+        binding.tvAccount.text = account.account
+        binding.tvEmail.text = account.email
+        binding.tvPassword.text = account.password
+        binding.tvDate.text = account.date
+
+        if (account.website.isEmpty()) {
             binding.llWebsite.visibility = View.GONE
         } else {
             binding.llWebsite.visibility = View.VISIBLE
-            binding.tvWebsite.text = account!!.website
+            binding.tvWebsite.text = account.website
         }
 
-        if (account!!.notes.isEmpty()) {
+        if (account.notes.isEmpty()) {
             binding.llNotes.visibility = View.GONE
         } else {
             binding.llNotes.visibility = View.VISIBLE
-            binding.tvNotes.text = account!!.notes
+            binding.tvNotes.text = account.notes
         }
 
     }
@@ -141,13 +151,23 @@ class DetailActivity : AppCompatActivity() {
                 intent.putExtra("SCREEN_NAME","Editar Cuenta")
                 intent.putExtra(AppConstants.ACTION,AppConstants.UPDATE)
                 intent.putExtra(AppConstants.ACCOUNT,account)
-                startActivity(intent)
+                startActivityForResult(intent,requestCode)
                 true
             }
             R.id.item_delete -> {
                 true
             }
             else -> super.onOptionsItemSelected(item)
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == this.requestCode) {
+            if (resultCode == Activity.RESULT_OK) {
+                account = data?.getParcelableExtra(AppConstants.ACCOUNT)
+                updateData(account!!)
+            }
         }
     }
 
