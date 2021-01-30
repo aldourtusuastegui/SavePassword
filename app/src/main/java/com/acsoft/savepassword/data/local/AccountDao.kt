@@ -19,4 +19,7 @@ interface AccountDao {
     @Query("UPDATE Account SET favorite = :isFavorite where id = :id")
     suspend fun setFavorite(id:Int,isFavorite: Boolean)
 
+    @Delete
+    suspend fun deleteAccount(account: Account)
+
 }

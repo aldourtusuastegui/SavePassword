@@ -22,4 +22,8 @@ class AccountRepositoryImpl(private val localDataSource: LocalAccountDataSource)
         localDataSource.setFavorite(id,isFavorite)
     }
 
+    override suspend fun deleteAccount(account: Account) {
+        localDataSource.deleteAccount(account)
+    }
+
 }

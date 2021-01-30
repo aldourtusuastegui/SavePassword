@@ -154,6 +154,8 @@ class DetailActivity : AppCompatActivity() {
                 true
             }
             R.id.item_delete -> {
+                viewModel.deleteAccount(this.account!!)
+                finish()
                 true
             }
             else -> super.onOptionsItemSelected(item)

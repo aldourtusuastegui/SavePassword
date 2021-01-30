@@ -30,6 +30,12 @@ class AccountViewModel(private val accountRepository: AccountRepository) : ViewM
         }
     }
 
+    fun deleteAccount(account: Account) {
+        viewModelScope.launch {
+            accountRepository.deleteAccount(account)
+        }
+    }
+
 }
 
 

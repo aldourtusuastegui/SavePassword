@@ -20,4 +20,8 @@ class LocalAccountDataSource(private val accountDao: AccountDao) {
     suspend fun setFavorite(id: Int,isFavorite: Boolean) {
         accountDao.setFavorite(id,isFavorite)
     }
+
+    suspend fun deleteAccount(account: Account) {
+        accountDao.deleteAccount(account)
+    }
 }

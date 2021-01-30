@@ -13,4 +13,6 @@ interface AccountRepository {
 
     suspend fun setFavorite(id: Int,isFavorite: Boolean)
 
+    suspend fun deleteAccount(account: Account)
+
 }
