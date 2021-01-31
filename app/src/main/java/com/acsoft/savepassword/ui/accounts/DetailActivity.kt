@@ -2,31 +2,24 @@ package com.acsoft.savepassword.ui.accounts
 
 
 import android.app.Activity
-import android.app.AlertDialog
-import android.app.Dialog
-import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
+import android.text.Html
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.core.view.get
-import androidx.lifecycle.lifecycleScope
 import com.acsoft.savepassword.R
 import com.acsoft.savepassword.application.AppConstants
 import com.acsoft.savepassword.data.local.AppDatabase
 import com.acsoft.savepassword.data.local.LocalAccountDataSource
 import com.acsoft.savepassword.data.model.Account
 import com.acsoft.savepassword.databinding.ActivityDetailBinding
-import com.acsoft.savepassword.databinding.ConfirmDialogFragmentBinding
 import com.acsoft.savepassword.presentation.AccountViewModel
 import com.acsoft.savepassword.presentation.AccountViewModelFactory
 import com.acsoft.savepassword.repository.AccountRepositoryImpl
-import com.acsoft.savepassword.ui.dialogs.ConfirmDialogFragment
 import com.acsoft.utils.copyToClipboard
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
@@ -150,6 +143,20 @@ class DetailActivity : AppCompatActivity() {
                 true
             }
             R.id.item_share -> {
+
+                val sendIntent: Intent = Intent().apply {
+                    action = Intent.ACTION_SEND
+                    putExtra(Intent.EXTRA_TEXT,"${getString(R.string.account)}: ${account?.account}\n" +
+                            "${getString(R.string.email)}: ${account?.email}\n" +
+                            "${getString(R.string.password)}: ${account?.password}\n" +
+                            "${getString(R.string.website)}: ${account?.website}\n" +
+                            "${getString(R.string.notes)}: ${account?.notes}")
+                    type = "text/json"
+                }
+
+                val shareIntent = Intent.createChooser(sendIntent, null)
+                startActivity(shareIntent)
+
                 true
             }
             R.id.item_edit -> {
