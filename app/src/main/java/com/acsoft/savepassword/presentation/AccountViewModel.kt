@@ -12,6 +12,8 @@ class AccountViewModel(private val accountRepository: AccountRepository) : ViewM
 
     fun getAccountList() = accountRepository.getAllAccounts().asLiveData()
 
+    fun getFavoritesList() = accountRepository.getFavorites().asLiveData()
+
     fun insertAccount(account: Account) {
         viewModelScope.launch {
             accountRepository.insertAccount(account)

@@ -7,6 +7,8 @@ interface AccountRepository {
 
     fun getAllAccounts() : Flow<List<Account>>
 
+    fun getFavorites() : Flow<List<Account>>
+
     suspend fun insertAccount(account: Account)
 
     suspend fun updateAccount(account: Account)

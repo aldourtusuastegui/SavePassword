@@ -10,6 +10,10 @@ class AccountRepositoryImpl(private val localDataSource: LocalAccountDataSource)
        return localDataSource.getAllAccounts()
     }
 
+    override fun getFavorites(): Flow<List<Account>> {
+        return localDataSource.getFavorites()
+    }
+
     override suspend fun insertAccount(account: Account) {
         localDataSource.insertAccount(account)
     }

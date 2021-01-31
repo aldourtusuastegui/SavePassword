@@ -4,7 +4,29 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.favorites.FavoritesFragment">
+    tools:context=".ui.accounts.FavoritesFragment">
 
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_favorites"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
+
+    <RelativeLayout
+        android:id="@+id/tv_empty_message"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:visibility="visible">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/subtitle_color"
+            android:textSize="@dimen/subtitle"
+            android:text="@string/empty_list_message"/>
+
+    </RelativeLayout>
 
 </LinearLayout>

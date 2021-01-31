@@ -27,7 +27,6 @@ class PasswordsFragment : Fragment(),AccountAdapter.OnAccountClickListener {
 
     private lateinit var adapter: AccountAdapter
 
-
     private val viewModel by viewModels<AccountViewModel> {
         AccountViewModelFactory(AccountRepositoryImpl(LocalAccountDataSource(AppDatabase.getDatabase(requireContext()).AccountDao())))
     }
@@ -48,6 +47,11 @@ class PasswordsFragment : Fragment(),AccountAdapter.OnAccountClickListener {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentAccountsBinding.bind(view)
 
+        showAccounts()
+
+    }
+
+    private fun showAccounts() {
         binding.rvAccount.layoutManager = LinearLayoutManager(requireContext())
         binding.rvAccount.addItemDecoration(
                 DividerItemDecoration(
@@ -72,7 +76,6 @@ class PasswordsFragment : Fragment(),AccountAdapter.OnAccountClickListener {
 
             }
         })
-
     }
 
     override fun onAccountClick(account: Account) {

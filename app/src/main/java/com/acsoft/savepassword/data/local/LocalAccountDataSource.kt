@@ -9,6 +9,10 @@ class LocalAccountDataSource(private val accountDao: AccountDao) {
         return accountDao.getAllAccounts()
     }
 
+    fun getFavorites() : Flow<List<Account>> {
+        return accountDao.getFavorites()
+    }
+
     suspend fun insertAccount(account: Account) {
         accountDao.insertAccount(account)
     }
