@@ -2,6 +2,9 @@ package com.acsoft.savepassword.ui.accounts
 
 
 import android.app.Activity
+import android.app.AlertDialog
+import android.app.Dialog
+import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -19,10 +22,13 @@ import com.acsoft.savepassword.data.local.AppDatabase
 import com.acsoft.savepassword.data.local.LocalAccountDataSource
 import com.acsoft.savepassword.data.model.Account
 import com.acsoft.savepassword.databinding.ActivityDetailBinding
+import com.acsoft.savepassword.databinding.ConfirmDialogFragmentBinding
 import com.acsoft.savepassword.presentation.AccountViewModel
 import com.acsoft.savepassword.presentation.AccountViewModelFactory
 import com.acsoft.savepassword.repository.AccountRepositoryImpl
+import com.acsoft.savepassword.ui.dialogs.ConfirmDialogFragment
 import com.acsoft.utils.copyToClipboard
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class DetailActivity : AppCompatActivity() {
 
@@ -154,8 +160,7 @@ class DetailActivity : AppCompatActivity() {
                 true
             }
             R.id.item_delete -> {
-                viewModel.deleteAccount(this.account!!)
-                finish()
+                deleteDialog()
                 true
             }
             else -> super.onOptionsItemSelected(item)
@@ -175,5 +180,20 @@ class DetailActivity : AppCompatActivity() {
     override fun onSupportNavigateUp(): Boolean {
         finish()
         return super.onSupportNavigateUp()
+    }
+
+    private fun deleteDialog() {
+        MaterialAlertDialogBuilder(this)
+                .setTitle(getString(R.string.question_delete))
+                .setMessage("")
+                .setNegativeButton(getString(R.string.cancel)) { dialog, _ ->
+                    dialog.dismiss()
+                }
+                .setPositiveButton(getString(R.string.delete)) { dialog, _ ->
+                    viewModel.deleteAccount(this.account!!)
+                    dialog.cancel()
+                    finish()
+                }
+                .show()
     }
 }

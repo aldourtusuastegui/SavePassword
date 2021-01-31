@@ -28,4 +28,8 @@
     <string name="empty_list_message">No hay elementos para mostrar</string>
     <string name="copied_clipboard">Copiado al portapapeles</string>
 
+    <string name="question_delete">¿Eliminar cuenta?</string>
+    <string name="cancel">Cancelar</string>
+    <string name="delete">Eliminar</string>
+
 </resources>
