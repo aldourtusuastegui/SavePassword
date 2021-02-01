@@ -31,5 +31,6 @@
     <string name="question_delete">¿Eliminar cuenta?</string>
     <string name="cancel">Cancelar</string>
     <string name="delete">Eliminar</string>
+    <string name="search">Buscar</string>
 
 </resources>

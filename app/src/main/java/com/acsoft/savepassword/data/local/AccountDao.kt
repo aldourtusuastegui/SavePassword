@@ -13,6 +13,9 @@ interface AccountDao {
     @Query("SELECT * FROM Account WHERE favorite = 1 ORDER BY account")
     fun getFavorites() : Flow<List<Account>>
 
+    @Query("SELECT * FROM Account WHERE account LIKE '%' || :account || '%'")
+    fun searchAccount(account: String) : Flow<List<Account>>
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAccount(account: Account)
 

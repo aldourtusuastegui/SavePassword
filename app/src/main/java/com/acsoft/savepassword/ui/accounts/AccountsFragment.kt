@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.SearchView
+import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -19,6 +21,7 @@ import com.acsoft.savepassword.presentation.AccountViewModel
 import com.acsoft.savepassword.presentation.AccountViewModelFactory
 import com.acsoft.savepassword.repository.AccountRepositoryImpl
 import com.acsoft.savepassword.ui.adapters.AccountAdapter
+import kotlin.collections.ArrayList
 
 
 class PasswordsFragment : Fragment(),AccountAdapter.OnAccountClickListener {
@@ -47,7 +50,9 @@ class PasswordsFragment : Fragment(),AccountAdapter.OnAccountClickListener {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentAccountsBinding.bind(view)
 
+
         showAccounts()
+        searchAccount()
 
     }
 
@@ -73,7 +78,22 @@ class PasswordsFragment : Fragment(),AccountAdapter.OnAccountClickListener {
                     binding.rvAccount.visibility = View.VISIBLE
                     binding.tvEmptyMessage.visibility = View.GONE
                 }
+            }
+        })
+    }
 
+    private fun searchAccount() {
+        binding.searchAccount.setOnQueryTextListener(object :  SearchView.OnQueryTextListener{
+            override fun onQueryTextSubmit(query: String?): Boolean {
+
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                viewModel.searchAccount(newText!!).observe(viewLifecycleOwner, {
+                    adapter.setAccountList(it)
+                })
+                return false
             }
         })
     }

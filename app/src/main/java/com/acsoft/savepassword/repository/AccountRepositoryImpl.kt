@@ -14,6 +14,10 @@ class AccountRepositoryImpl(private val localDataSource: LocalAccountDataSource)
         return localDataSource.getFavorites()
     }
 
+    override fun searchAccount(account: String): Flow<List<Account>> {
+        return localDataSource.searchAccount(account)
+    }
+
     override suspend fun insertAccount(account: Account) {
         localDataSource.insertAccount(account)
     }
