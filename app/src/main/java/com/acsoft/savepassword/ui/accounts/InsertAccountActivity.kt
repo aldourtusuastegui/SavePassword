@@ -112,15 +112,11 @@ class InsertAccountActivity : AppCompatActivity() {
 
         binding.saveButton.setOnClickListener {
 
-            val titleAccount = binding.accountInputEditText.text.toString()
             if (action==AppConstants.INSERT) {
                 insertAccount()
-                Toast.makeText(this, "Se guardo la cuenta de $titleAccount", Toast.LENGTH_LONG).show()
             } else if (action==AppConstants.UPDATE) {
                 updateAccount()
-                Toast.makeText(this, "Se actualizo la cuenta de $titleAccount", Toast.LENGTH_LONG).show()
             }
-
             finish()
         }
     }
