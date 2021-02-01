@@ -32,5 +32,6 @@
     <string name="cancel">Cancelar</string>
     <string name="delete">Eliminar</string>
     <string name="search">Buscar</string>
+    <string name="csv">csv</string>
 
 </resources>

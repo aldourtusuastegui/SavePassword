@@ -5,12 +5,14 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import com.acsoft.savepassword.R
+import com.acsoft.savepassword.ui.accounts.CsvFragment
 import com.acsoft.savepassword.ui.accounts.FavoritesFragment
 import com.acsoft.savepassword.ui.accounts.PasswordsFragment
 
 private val TAB_TITLES = arrayOf(
         R.string.accounts,
-        R.string.favorites
+        R.string.favorites,
+        R.string.csv
 )
 
 /**
@@ -28,6 +30,7 @@ class SectionsPagerAdapter(private val context: Context, fm: FragmentManager)
         when(position) {
             0 -> fragment = PasswordsFragment()
             1 -> fragment = FavoritesFragment()
+            2 -> fragment = CsvFragment()
         }
         return fragment!!
     }
@@ -37,7 +40,7 @@ class SectionsPagerAdapter(private val context: Context, fm: FragmentManager)
     }
 
     override fun getCount(): Int {
-        // Show 2 total pages.
-        return 2
+        // Show 3 total pages.
+        return 3
     }
 }
