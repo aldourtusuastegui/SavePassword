@@ -16,4 +16,6 @@
     <dimen name="letter_size_16">16sp</dimen>
     <dimen name="margin_size_5">5dp</dimen>
 
+    <dimen name="splash_screen_title">40sp</dimen>
+
 </resources>
