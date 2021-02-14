@@ -20,7 +20,9 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ui.login.PasswordActivity" />
+        <activity android:name=".ui.login.PasswordActivity"
+            android:screenOrientation="portrait"/>
+
         <activity
             android:name=".ui.accounts.DetailActivity"
             android:label="@string/screen_detail_title"
