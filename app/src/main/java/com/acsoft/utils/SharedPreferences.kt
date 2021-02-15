@@ -7,7 +7,7 @@ class SharedPreferences(private val context: Context) {
 
     companion object {
         private const val PREFS_NAME = "preferences"
-        const val FIRST_TIME = "first_time"
+        const val PASSWORD = "password"
     }
 
     private val sharedPref: SharedPreferences = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)

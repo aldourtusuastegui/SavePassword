@@ -11,13 +11,18 @@ import android.view.View
 import androidx.lifecycle.lifecycleScope
 import com.acsoft.savepassword.R
 import com.acsoft.savepassword.ui.login.PasswordActivity
+import com.acsoft.utils.SharedPreferences
 import kotlinx.coroutines.*
 
 class SplashScreenActivity : AppCompatActivity() {
 
+    private lateinit var sharedPreferences: SharedPreferences
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash_screen)
+
+        sharedPreferences = SharedPreferences(this)
 
         hideNavigationBar()
 
