@@ -16,7 +16,7 @@ class PasswordActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         binding = ActivityPasswordBinding.inflate(layoutInflater)
-        binding.root
+        setContentView(binding.root)
 
         sharedPreferences = SharedPreferences(this)
 

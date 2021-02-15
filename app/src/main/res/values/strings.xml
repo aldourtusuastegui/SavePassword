@@ -33,4 +33,9 @@
     <string name="delete">Eliminar</string>
     <string name="search">Buscar</string>
 
+    <string name="new_password">Nueva contraseña</string>
+    <string name="confirm_password">Confirmar contraseña</string>
+    <string name="save">Guardar</string>
+    <string name="title_new_password">Ingresa una contraseña para acceder a SavePassword</string>
+
 </resources>
