@@ -19,6 +19,6 @@
     <dimen name="splash_screen_title">40sp</dimen>
 
     <dimen name="number_size">26sp</dimen>
-    <dimen name="button_margin">15dp</dimen>
+    <dimen name="button_padding">15dp</dimen>
 
 </resources>

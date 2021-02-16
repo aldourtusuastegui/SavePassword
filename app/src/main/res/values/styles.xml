@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="ButtonPassword" parent="Widget.AppCompat.Button.Borderless.Colored">
+        <item name="android:padding">@dimen/button_padding</item>
+        <item name="android:textColor">@color/text_color_button_password</item>
+        <item name="android:textSize">@dimen/number_size</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+</resources>
