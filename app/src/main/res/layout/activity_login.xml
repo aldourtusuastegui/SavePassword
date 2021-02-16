@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -20,25 +19,25 @@
             android:gravity="center">
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/buttonNumberOne"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 style="@style/ButtonPassword"
-                android:text="1" />
+                android:text="@string/one" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/buttonNumberTwo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 style="@style/ButtonPassword"
-                android:text="2"/>
+                android:text="@string/two"/>
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/buttonNumberThree"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 style="@style/ButtonPassword"
-                android:text="3"/>
+                android:text="@string/three"/>
 
         </TableRow>
 
@@ -48,25 +47,25 @@
             android:gravity="center">
 
             <Button
-                android:id="@+id/button4"
+                android:id="@+id/buttonNumberFour"
                 style="@style/ButtonPassword"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="4"/>
+                android:text="@string/four"/>
 
             <Button
-                android:id="@+id/button5"
+                android:id="@+id/buttonNumberFive"
                 style="@style/ButtonPassword"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="5"/>
+                android:text="@string/five"/>
 
             <Button
-                android:id="@+id/button6"
+                android:id="@+id/buttonNumberSix"
                 style="@style/ButtonPassword"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="6"/>
+                android:text="@string/six"/>
 
         </TableRow>
 
@@ -76,25 +75,25 @@
             android:gravity="center">
 
             <Button
-                android:id="@+id/button7"
+                android:id="@+id/buttonNumberSeven"
                 style="@style/ButtonPassword"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="7"/>
+                android:text="@string/seven"/>
 
             <Button
-                android:id="@+id/button8"
+                android:id="@+id/buttonNumberEight"
                 style="@style/ButtonPassword"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="8"/>
+                android:text="@string/eight"/>
 
             <Button
-                android:id="@+id/button9"
+                android:id="@+id/buttonNumberNine"
                 style="@style/ButtonPassword"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="9"/>
+                android:text="@string/nine"/>
 
 
         </TableRow>
@@ -105,11 +104,11 @@
             android:gravity="center">
 
             <Button
-                android:id="@+id/button0"
+                android:id="@+id/buttonNumberZero"
                 style="@style/ButtonPassword"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0"/>
+                android:text="@string/zero"/>
 
         </TableRow>
 
