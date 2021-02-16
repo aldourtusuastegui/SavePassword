@@ -35,6 +35,7 @@
 
     <string name="new_password">Nueva contraseña</string>
     <string name="confirm_password">Confirmar contraseña</string>
+    <string name="login">Iniciar sesión</string>
     <string name="save">Guardar</string>
     <string name="title_new_password">Ingresa una contraseña para acceder a SavePassword</string>
 

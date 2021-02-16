@@ -7,9 +7,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import android.view.View
 import androidx.lifecycle.lifecycleScope
 import com.acsoft.savepassword.R
+import com.acsoft.savepassword.ui.login.LoginActivity
 import com.acsoft.savepassword.ui.login.PasswordActivity
 import com.acsoft.utils.SharedPreferences
 import kotlinx.coroutines.*
@@ -42,7 +44,12 @@ class SplashScreenActivity : AppCompatActivity() {
         withContext(Dispatchers.IO) {
                 delay(3000)
                 finish()
-                startActivity(Intent(this@SplashScreenActivity,PasswordActivity::class.java))
+                val pwd = sharedPreferences.getValueString(SharedPreferences.PASSWORD)
+                if(pwd.isNullOrEmpty()) {
+                    startActivity(Intent(this@SplashScreenActivity,PasswordActivity::class.java))
+                } else {
+                    startActivity(Intent(this@SplashScreenActivity,LoginActivity::class.java))
+                }
         }
     }
 
