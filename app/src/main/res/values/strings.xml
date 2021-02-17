@@ -37,7 +37,7 @@
     <string name="confirm_password">Confirmar contraseña</string>
     <string name="login">Iniciar sesión</string>
     <string name="save">Guardar</string>
-    <string name="title_new_password">Ingresa una contraseña para acceder a SavePassword</string>
+    <string name="title_new_password">Ingresa una contraseña de 4 dígitos para acceder a SavePassword</string>
 
     <!--numbers-->
     <string name="zero">0</string>

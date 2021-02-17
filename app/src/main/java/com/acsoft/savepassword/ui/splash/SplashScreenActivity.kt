@@ -1,19 +1,14 @@
-@file:Suppress("DEPRECATION")
-
 package com.acsoft.savepassword.ui.splash
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
-import android.util.Log
 import android.view.View
 import androidx.lifecycle.lifecycleScope
 import com.acsoft.savepassword.R
 import com.acsoft.savepassword.ui.login.LoginActivity
 import com.acsoft.savepassword.ui.login.PasswordActivity
-import com.acsoft.utils.SharedPreferences
+import com.acsoft.savepassword.utils.SharedPreferences
 import kotlinx.coroutines.*
 
 class SplashScreenActivity : AppCompatActivity() {
@@ -36,6 +31,7 @@ class SplashScreenActivity : AppCompatActivity() {
 
     private fun hideNavigationBar() {
         window.decorView.apply {
+            @Suppress("DEPRECATION")
             systemUiVisibility = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_FULLSCREEN
         }
     }

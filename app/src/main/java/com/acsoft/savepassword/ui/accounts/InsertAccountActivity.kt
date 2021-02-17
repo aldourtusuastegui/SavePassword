@@ -5,7 +5,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.acsoft.savepassword.R
@@ -17,8 +16,8 @@ import com.acsoft.savepassword.databinding.ActivityInsertAccountBinding
 import com.acsoft.savepassword.presentation.AccountViewModel
 import com.acsoft.savepassword.presentation.AccountViewModelFactory
 import com.acsoft.savepassword.repository.AccountRepositoryImpl
-import com.acsoft.utils.getDateFormat
-import com.acsoft.utils.upperCase
+import com.acsoft.savepassword.utils.getDateFormat
+import com.acsoft.savepassword.utils.upperCase
 
 class InsertAccountActivity : AppCompatActivity() {
 

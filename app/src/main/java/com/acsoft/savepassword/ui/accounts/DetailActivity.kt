@@ -19,7 +19,7 @@ import com.acsoft.savepassword.databinding.ActivityDetailBinding
 import com.acsoft.savepassword.presentation.AccountViewModel
 import com.acsoft.savepassword.presentation.AccountViewModelFactory
 import com.acsoft.savepassword.repository.AccountRepositoryImpl
-import com.acsoft.utils.copyToClipboard
+import com.acsoft.savepassword.utils.copyToClipboard
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class DetailActivity : AppCompatActivity() {

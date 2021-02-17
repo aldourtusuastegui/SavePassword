@@ -3,13 +3,11 @@ package com.acsoft.savepassword.ui.login
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import com.acsoft.enums.Number
+import com.acsoft.savepassword.enums.Number
 import com.acsoft.savepassword.MainActivity
 import com.acsoft.savepassword.databinding.ActivityLoginBinding
-import com.acsoft.utils.SharedPreferences
-import com.acsoft.utils.clickVibration
-import com.acsoft.utils.wrongPasswordVibration
+import com.acsoft.savepassword.utils.SharedPreferences
+import com.acsoft.savepassword.utils.clickVibration
 
 class LoginActivity : AppCompatActivity() {
 
@@ -37,42 +35,36 @@ class LoginActivity : AppCompatActivity() {
         binding.buttonNumberZero.setOnClickListener {
             clickVibration(this)
             touchValue += Number.ZERO.ordinal
-            Log.d("NEW",touchValue)
             validatePassword()
         }
 
         binding.buttonNumberOne.setOnClickListener {
             clickVibration(this)
             touchValue += Number.ONE.ordinal
-            Log.d("NEW",touchValue)
             validatePassword()
         }
 
         binding.buttonNumberTwo.setOnClickListener {
             clickVibration(this)
             touchValue += Number.TWO.ordinal
-            Log.d("NEW",touchValue)
             validatePassword()
         }
 
         binding.buttonNumberThree.setOnClickListener {
             clickVibration(this)
             touchValue += Number.THREE.ordinal
-            Log.d("NEW",touchValue)
             validatePassword()
         }
 
         binding.buttonNumberFour.setOnClickListener {
             clickVibration(this)
             touchValue += Number.FOUR.ordinal
-            Log.d("NEW",touchValue)
             validatePassword()
         }
 
         binding.buttonNumberFive.setOnClickListener {
             clickVibration(this)
             touchValue += Number.FIVE.ordinal
-            Log.d("NEW",touchValue)
             validatePassword()
         }
 

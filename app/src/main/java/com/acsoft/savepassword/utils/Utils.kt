@@ -1,4 +1,4 @@
-package com.acsoft.utils
+package com.acsoft.savepassword.utils
 
 import android.content.ClipData
 import android.content.ClipboardManager

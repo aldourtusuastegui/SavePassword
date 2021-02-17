@@ -7,7 +7,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import com.acsoft.savepassword.R
 import com.acsoft.savepassword.databinding.ActivityPasswordBinding
-import com.acsoft.utils.SharedPreferences
+import com.acsoft.savepassword.utils.SharedPreferences
 
 class PasswordActivity : AppCompatActivity() {
 
@@ -70,7 +70,7 @@ class PasswordActivity : AppCompatActivity() {
 
 
     private fun validateNewPassword(password: String) {
-        if (password.isEmpty()) {
+        if (password.length!=4) {
             binding.newPasswordInputLayout.error = getString(R.string.error_message_enter_password)
         } else {
             binding.newPasswordInputLayout.error = null
@@ -78,7 +78,7 @@ class PasswordActivity : AppCompatActivity() {
     }
 
     private fun validateConfirmPassword(password: String) {
-        if (password.isEmpty()) {
+        if (password.length!=4) {
             binding.confirmPasswordInputLayout.error = getString(R.string.error_message_enter_password)
         } else {
             binding.confirmPasswordInputLayout.error = null
@@ -90,7 +90,7 @@ class PasswordActivity : AppCompatActivity() {
         val newPassword:String = binding.newPasswordInputEditText.text.toString()
         val confirmPassword:String = binding.confirmPasswordInputEditText.text.toString()
 
-        val validate =  (newPassword.isNotEmpty() && confirmPassword.isNotEmpty())
+        val validate =  (newPassword.length==4 && confirmPassword.length==4)
                 && (newPassword == confirmPassword)
 
         binding.savePasswordBtn.isEnabled = validate

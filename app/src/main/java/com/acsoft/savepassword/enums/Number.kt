@@ -1,4 +1,4 @@
-package com.acsoft.enums
+package com.acsoft.savepassword.enums
 
 enum class Number(number: Int) {
     ZERO(0),
