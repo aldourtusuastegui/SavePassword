@@ -1,118 +1,167 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:background="@color/primary_color"
     tools:context=".ui.login.LoginActivity">
 
 
-    <TableLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:layout_margin="@dimen/default_margin">
+        android:layout_margin="@dimen/default_margin"
+        android:orientation="vertical">
 
-        <TableRow
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center">
+            android:layout_height="wrap_content"
+            android:weightSum="4"
+            android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/buttonNumberOne"
+            <ImageView
+                android:id="@+id/iv_circle_one"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                style="@style/ButtonPassword"
-                android:text="@string/one" />
+                android:layout_weight="1"
+                android:src="@drawable/ic_circle_clean"/>
 
-            <Button
-                android:id="@+id/buttonNumberTwo"
+            <ImageView
+                android:id="@+id/iv_circle_two"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                style="@style/ButtonPassword"
-                android:text="@string/two"/>
+                android:layout_weight="1"
+                android:src="@drawable/ic_circle_clean"/>
 
-            <Button
-                android:id="@+id/buttonNumberThree"
+            <ImageView
+                android:id="@+id/iv_circle_three"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                style="@style/ButtonPassword"
-                android:text="@string/three"/>
+                android:layout_weight="1"
+                android:src="@drawable/ic_circle_clean"/>
 
-        </TableRow>
+            <ImageView
+                android:id="@+id/iv_circle_four"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/ic_circle_clean"/>
 
-        <TableRow
+        </LinearLayout>
+
+        <TableLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center">
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_margin="@dimen/default_margin">
 
-            <Button
-                android:id="@+id/buttonNumberFour"
-                style="@style/ButtonPassword"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/four"/>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
 
-            <Button
-                android:id="@+id/buttonNumberFive"
-                style="@style/ButtonPassword"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/five"/>
+                <Button
+                    android:id="@+id/buttonNumberOne"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/ButtonPassword"
+                    android:text="@string/one" />
 
-            <Button
-                android:id="@+id/buttonNumberSix"
-                style="@style/ButtonPassword"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/six"/>
+                <Button
+                    android:id="@+id/buttonNumberTwo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/ButtonPassword"
+                    android:text="@string/two"/>
 
-        </TableRow>
+                <Button
+                    android:id="@+id/buttonNumberThree"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/ButtonPassword"
+                    android:text="@string/three"/>
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center">
+            </TableRow>
 
-            <Button
-                android:id="@+id/buttonNumberSeven"
-                style="@style/ButtonPassword"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/seven"/>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
 
-            <Button
-                android:id="@+id/buttonNumberEight"
-                style="@style/ButtonPassword"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/eight"/>
+                <Button
+                    android:id="@+id/buttonNumberFour"
+                    style="@style/ButtonPassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/four"/>
 
-            <Button
-                android:id="@+id/buttonNumberNine"
-                style="@style/ButtonPassword"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/nine"/>
+                <Button
+                    android:id="@+id/buttonNumberFive"
+                    style="@style/ButtonPassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/five"/>
+
+                <Button
+                    android:id="@+id/buttonNumberSix"
+                    style="@style/ButtonPassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/six"/>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/buttonNumberSeven"
+                    style="@style/ButtonPassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/seven"/>
+
+                <Button
+                    android:id="@+id/buttonNumberEight"
+                    style="@style/ButtonPassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/eight"/>
+
+                <Button
+                    android:id="@+id/buttonNumberNine"
+                    style="@style/ButtonPassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/nine"/>
 
 
-        </TableRow>
+            </TableRow>
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center">
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
 
-            <Button
-                android:id="@+id/buttonNumberZero"
-                style="@style/ButtonPassword"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/zero"/>
+                <Button
+                    android:id="@+id/buttonNumberZero"
+                    style="@style/ButtonPassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/zero"/>
 
-        </TableRow>
+            </TableRow>
 
-    </TableLayout>
+        </TableLayout>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

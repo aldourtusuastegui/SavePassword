@@ -7,6 +7,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import com.acsoft.savepassword.R
 import com.acsoft.savepassword.databinding.ActivityPasswordBinding
+import com.acsoft.savepassword.enums.Number
 import com.acsoft.savepassword.utils.SharedPreferences
 
 class PasswordActivity : AppCompatActivity() {
@@ -70,7 +71,7 @@ class PasswordActivity : AppCompatActivity() {
 
 
     private fun validateNewPassword(password: String) {
-        if (password.length!=4) {
+        if (password.length!=Number.FOUR.ordinal) {
             binding.newPasswordInputLayout.error = getString(R.string.error_message_enter_password)
         } else {
             binding.newPasswordInputLayout.error = null
@@ -78,7 +79,7 @@ class PasswordActivity : AppCompatActivity() {
     }
 
     private fun validateConfirmPassword(password: String) {
-        if (password.length!=4) {
+        if (password.length!=Number.FOUR.ordinal) {
             binding.confirmPasswordInputLayout.error = getString(R.string.error_message_enter_password)
         } else {
             binding.confirmPasswordInputLayout.error = null
@@ -90,7 +91,7 @@ class PasswordActivity : AppCompatActivity() {
         val newPassword:String = binding.newPasswordInputEditText.text.toString()
         val confirmPassword:String = binding.confirmPasswordInputEditText.text.toString()
 
-        val validate =  (newPassword.length==4 && confirmPassword.length==4)
+        val validate =  (newPassword.length==Number.FOUR.ordinal && confirmPassword.length==Number.FOUR.ordinal)
                 && (newPassword == confirmPassword)
 
         binding.savePasswordBtn.isEnabled = validate
