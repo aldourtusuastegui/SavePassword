@@ -158,6 +158,15 @@
 
         </TableLayout>
 
+        <Button
+            android:id="@+id/buttonDelete"
+            style="@style/ButtonPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:textSize="@dimen/letter_size_16"
+            android:layout_marginRight="@dimen/default_margin"
+            android:text="@string/delete"/>
 
     </LinearLayout>
 

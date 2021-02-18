@@ -109,6 +109,11 @@ class LoginActivity : AppCompatActivity() {
             validatePassword()
         }
 
+        binding.buttonDelete.setOnClickListener {
+            clickVibration(this)
+            restartCircles()
+        }
+
     }
 
     private fun validatePassword() {
@@ -121,8 +126,6 @@ class LoginActivity : AppCompatActivity() {
        } else {
            if (countClicks==4) {
                Timer().schedule(500){
-                   countClicks = 0
-                   touchValue = ""
                    restartCircles()
                    wrongPasswordVibration(this@LoginActivity)
                }
@@ -131,6 +134,8 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun restartCircles() {
+        countClicks = 0
+        touchValue = ""
         binding.ivCircleOne.setImageResource(R.drawable.ic_circle_clean)
         binding.ivCircleTwo.setImageResource(R.drawable.ic_circle_clean)
         binding.ivCircleThree.setImageResource(R.drawable.ic_circle_clean)
