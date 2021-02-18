@@ -38,7 +38,7 @@ class SplashScreenActivity : AppCompatActivity() {
 
     private suspend fun openNextActivity() {
         withContext(Dispatchers.IO) {
-                delay(3000)
+                delay(1000)
                 finish()
                 val pwd = sharedPreferences.getValueString(SharedPreferences.PASSWORD)
                 if(pwd.isNullOrEmpty()) {
