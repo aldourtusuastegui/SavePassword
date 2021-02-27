@@ -7,284 +7,296 @@
     android:orientation="vertical"
     tools:context=".ui.accounts.DetailActivity">
 
-    <!--Account-->
-    <LinearLayout
-        android:id="@+id/ll_account"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="@dimen/default_margin">
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="@dimen/default_margin"
-            android:layout_marginEnd="@dimen/default_margin"
-            android:src="@drawable/ic_account"
-            app:tint="@color/primary_color" />
-
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/default_margin"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/tv_account"
+            <!--Account-->
+            <LinearLayout
+                android:id="@+id/ll_account"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:text="Gmail"
-                android:textSize="@dimen/letter_size_16"
-                android:textColor="@color/title_color"/>
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/default_margin">
 
-            <TextView
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/default_margin"
+                    android:layout_marginEnd="@dimen/default_margin"
+                    android:src="@drawable/ic_account"
+                    app:tint="@color/primary_color" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/default_margin"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_account"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:text="Gmail"
+                        android:textSize="@dimen/letter_size_16"
+                        android:textColor="@color/title_color"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/subtitle_color"
+                        android:textSize="@dimen/subtitle"
+                        android:layout_marginTop="@dimen/margin_size_5"
+                        android:layout_marginBottom="@dimen/default_margin"
+                        android:text="@string/account"/>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <!--username/email-->
+            <LinearLayout
+                android:id="@+id/ll_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/subtitle_color"
-                android:textSize="@dimen/subtitle"
-                android:layout_marginTop="@dimen/margin_size_5"
-                android:layout_marginBottom="@dimen/default_margin"
-                android:text="@string/account"/>
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/default_margin">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/default_margin"
+                    android:layout_marginEnd="@dimen/default_margin"
+                    android:src="@drawable/ic_email"
+                    app:tint="@color/primary_color" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/default_margin"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:text="correo@gmail.com"
+                        android:textSize="@dimen/letter_size_16"
+                        android:textColor="@color/title_color"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/subtitle_color"
+                        android:textSize="@dimen/subtitle"
+                        android:layout_marginTop="@dimen/margin_size_5"
+                        android:layout_marginBottom="@dimen/default_margin"
+                        android:text="@string/email"/>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <!--Password-->
+            <LinearLayout
+                android:id="@+id/ll_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/default_margin">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/default_margin"
+                    android:layout_marginEnd="@dimen/default_margin"
+                    android:src="@drawable/ic_lock"
+                    app:tint="@color/primary_color" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/default_margin"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:text="14ERTYdfg1"
+                        android:textSize="@dimen/letter_size_16"
+                        android:textColor="@color/title_color"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/subtitle_color"
+                        android:textSize="@dimen/subtitle"
+                        android:layout_marginTop="@dimen/margin_size_5"
+                        android:layout_marginBottom="@dimen/default_margin"
+                        android:text="@string/password"/>
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <!--website-->
+            <LinearLayout
+                android:id="@+id/ll_website"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/default_margin">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/default_margin"
+                    android:layout_marginEnd="@dimen/default_margin"
+                    android:src="@drawable/ic_link"
+                    app:tint="@color/primary_color" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/default_margin"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_website"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:text="www.gmail.com"
+                        android:textSize="@dimen/letter_size_16"
+                        android:textColor="@color/title_color"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/subtitle_color"
+                        android:textSize="@dimen/subtitle"
+                        android:layout_marginTop="@dimen/margin_size_5"
+                        android:layout_marginBottom="@dimen/default_margin"
+                        android:text="@string/website"/>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <!--notes-->
+            <LinearLayout
+                android:id="@+id/ll_notes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/default_margin">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/default_margin"
+                    android:layout_marginEnd="@dimen/default_margin"
+                    android:src="@drawable/ic_note"
+                    app:tint="@color/primary_color" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/default_margin"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_notes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:text="una nueva nota."
+                        android:textSize="@dimen/letter_size_16"
+                        android:textColor="@color/title_color"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/subtitle_color"
+                        android:textSize="@dimen/subtitle"
+                        android:layout_marginTop="@dimen/margin_size_5"
+                        android:layout_marginBottom="@dimen/default_margin"
+                        android:text="@string/notes"/>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <!--last update-->
+            <LinearLayout
+                android:id="@+id/ll_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/default_margin">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/default_margin"
+                    android:layout_marginEnd="@dimen/default_margin"
+                    android:src="@drawable/ic_update"
+                    app:tint="@color/primary_color" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/default_margin"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:text="Enero 24, 2021 23:20"
+                        android:textSize="@dimen/letter_size_16"
+                        android:textColor="@color/title_color"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/subtitle_color"
+                        android:textSize="@dimen/subtitle"
+                        android:layout_marginTop="@dimen/margin_size_5"
+                        android:layout_marginBottom="@dimen/default_margin"
+                        android:text="@string/last_update"/>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
 
         </LinearLayout>
 
-
-    </LinearLayout>
-
-
-    <!--username/email-->
-    <LinearLayout
-        android:id="@+id/ll_email"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="@dimen/default_margin">
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="@dimen/default_margin"
-            android:layout_marginEnd="@dimen/default_margin"
-            android:src="@drawable/ic_email"
-            app:tint="@color/primary_color" />
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/default_margin"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/tv_email"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                tools:text="correo@gmail.com"
-                android:textSize="@dimen/letter_size_16"
-                android:textColor="@color/title_color"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/subtitle_color"
-                android:textSize="@dimen/subtitle"
-                android:layout_marginTop="@dimen/margin_size_5"
-                android:layout_marginBottom="@dimen/default_margin"
-                android:text="@string/email"/>
-
-        </LinearLayout>
-
-
-    </LinearLayout>
-
-
-    <!--Password-->
-    <LinearLayout
-        android:id="@+id/ll_password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="@dimen/default_margin">
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="@dimen/default_margin"
-            android:layout_marginEnd="@dimen/default_margin"
-            android:src="@drawable/ic_lock"
-            app:tint="@color/primary_color" />
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/default_margin"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/tv_password"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                tools:text="14ERTYdfg1"
-                android:textSize="@dimen/letter_size_16"
-                android:textColor="@color/title_color"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/subtitle_color"
-                android:textSize="@dimen/subtitle"
-                android:layout_marginTop="@dimen/margin_size_5"
-                android:layout_marginBottom="@dimen/default_margin"
-                android:text="@string/password"/>
-
-
-        </LinearLayout>
-
-
-    </LinearLayout>
-
-    <!--website-->
-    <LinearLayout
-        android:id="@+id/ll_website"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="@dimen/default_margin">
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="@dimen/default_margin"
-            android:layout_marginEnd="@dimen/default_margin"
-            android:src="@drawable/ic_link"
-            app:tint="@color/primary_color" />
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/default_margin"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/tv_website"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                tools:text="www.gmail.com"
-                android:textSize="@dimen/letter_size_16"
-                android:textColor="@color/title_color"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/subtitle_color"
-                android:textSize="@dimen/subtitle"
-                android:layout_marginTop="@dimen/margin_size_5"
-                android:layout_marginBottom="@dimen/default_margin"
-                android:text="@string/website"/>
-
-        </LinearLayout>
-
-
-    </LinearLayout>
-
-    <!--notes-->
-    <LinearLayout
-        android:id="@+id/ll_notes"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="@dimen/default_margin">
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="@dimen/default_margin"
-            android:layout_marginEnd="@dimen/default_margin"
-            android:src="@drawable/ic_note"
-            app:tint="@color/primary_color" />
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/default_margin"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/tv_notes"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                tools:text="una nueva nota."
-                android:textSize="@dimen/letter_size_16"
-                android:textColor="@color/title_color"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/subtitle_color"
-                android:textSize="@dimen/subtitle"
-                android:layout_marginTop="@dimen/margin_size_5"
-                android:layout_marginBottom="@dimen/default_margin"
-                android:text="@string/notes"/>
-
-        </LinearLayout>
-
-
-    </LinearLayout>
-
-    <!--last update-->
-    <LinearLayout
-        android:id="@+id/ll_date"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="@dimen/default_margin">
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="@dimen/default_margin"
-            android:layout_marginEnd="@dimen/default_margin"
-            android:src="@drawable/ic_update"
-            app:tint="@color/primary_color" />
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/default_margin"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/tv_date"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                tools:text="Enero 24, 2021 23:20"
-                android:textSize="@dimen/letter_size_16"
-                android:textColor="@color/title_color"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/subtitle_color"
-                android:textSize="@dimen/subtitle"
-                android:layout_marginTop="@dimen/margin_size_5"
-                android:layout_marginBottom="@dimen/default_margin"
-                android:text="@string/last_update"/>
-
-        </LinearLayout>
-
-
-    </LinearLayout>
+    </ScrollView>
 
 
 </LinearLayout>
