@@ -26,6 +26,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/account_input_edit_text"
                 android:layout_width="match_parent"
+                android:maxLength="20"
                 android:inputType="textCapWords|textCapSentences"
                 android:layout_height="wrap_content"/>
 
@@ -44,6 +45,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/email_input_edit_text"
                 android:inputType="text"
+                android:maxLength="50"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
@@ -64,6 +66,7 @@
                 android:id="@+id/password_input_edit_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:maxLength="50"
                 android:imeOptions="actionDone"
                 android:inputType="textPassword"/>
 
@@ -83,6 +86,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:imeOptions="actionDone"
+                android:maxLength="50"
                 android:inputType="text"/>
 
 
@@ -100,6 +104,7 @@
                 android:id="@+id/notes_input_edit_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:maxLength="100"
                 android:imeOptions="actionDone"
                 android:inputType="text"/>
 
