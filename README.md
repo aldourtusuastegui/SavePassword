@@ -1,7 +1,7 @@
 # SavePassword
 ## Un útil gestor de contraseñas
 
-SavePassword se encarga de almacenar las contraseñas de sitios web o redes sociales de manera local y asi solo tienes 
+SavePassword se encarga de almacenar las contraseñas de sitios web o redes sociales de manera local y así solo tienes 
 que preocuparte por una contraseña, la de SavePassword.
 
 ## Caracteristicas
