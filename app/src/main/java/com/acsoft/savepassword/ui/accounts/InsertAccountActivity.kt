@@ -22,6 +22,7 @@ import com.acsoft.savepassword.utils.upperCase
 class InsertAccountActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityInsertAccountBinding
+    private var favorite:Boolean = false
 
     private val viewModel by viewModels<AccountViewModel> {
         AccountViewModelFactory(
@@ -72,6 +73,7 @@ class InsertAccountActivity : AppCompatActivity() {
             binding.passwordInputEditText.setText(account?.password)
             binding.webSiteInputEditText.setText(account?.website)
             binding.notesInputEditText.setText(account?.notes)
+            favorite = if (account?.favorite==null) false else account?.favorite!!
         }
     }
 
@@ -167,7 +169,7 @@ class InsertAccountActivity : AppCompatActivity() {
 
         val account = Account(
             0, title,
-            username, password, website, notes, false, date
+            username, password, website, notes, favorite, date
         )
 
         viewModel.insertAccount(account)
@@ -183,7 +185,7 @@ class InsertAccountActivity : AppCompatActivity() {
         val date:String = upperCase(getDateFormat())
 
         val update = Account(
-             account!!.id,title,username,password,website,notes,false,date)
+             account!!.id,title,username,password,website,notes,favorite,date)
 
         viewModel.updateAccount(update)
 
