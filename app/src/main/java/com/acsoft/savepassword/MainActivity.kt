@@ -2,17 +2,16 @@ package com.acsoft.savepassword
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
 import com.google.android.material.tabs.TabLayout
 import androidx.viewpager.widget.ViewPager
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.SearchView
 import com.acsoft.savepassword.application.AppConstants
 import com.acsoft.savepassword.ui.accounts.InsertAccountActivity
 import com.acsoft.savepassword.ui.adapters.SectionsPagerAdapter
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {

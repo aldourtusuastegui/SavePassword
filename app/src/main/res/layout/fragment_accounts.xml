@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.accounts.PasswordsFragment">
+    tools:context=".ui.accounts.AccountsFragment">
 
 
     <androidx.cardview.widget.CardView

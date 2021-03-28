@@ -6,7 +6,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import com.acsoft.savepassword.R
 import com.acsoft.savepassword.ui.accounts.FavoritesFragment
-import com.acsoft.savepassword.ui.accounts.PasswordsFragment
+import com.acsoft.savepassword.ui.accounts.AccountsFragment
 
 private val TAB_TITLES = arrayOf(
         R.string.accounts,
@@ -26,7 +26,7 @@ class SectionsPagerAdapter(private val context: Context, fm: FragmentManager)
         // getItem is called to instantiate the fragment for the given page.
         // Return a PlaceholderFragment (defined as a static inner class below).
         when(position) {
-            0 -> fragment = PasswordsFragment()
+            0 -> fragment = AccountsFragment()
             1 -> fragment = FavoritesFragment()
         }
         return fragment!!

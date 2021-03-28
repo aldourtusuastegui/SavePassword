@@ -2,17 +2,18 @@ package com.acsoft.savepassword.ui.accounts
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.SearchView
-import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.acsoft.savepassword.R
 import com.acsoft.savepassword.application.AppConstants
+import com.acsoft.savepassword.data.local.AccountDao
 import com.acsoft.savepassword.data.local.AppDatabase
 import com.acsoft.savepassword.data.local.LocalAccountDataSource
 import com.acsoft.savepassword.data.model.Account
@@ -21,10 +22,14 @@ import com.acsoft.savepassword.presentation.AccountViewModel
 import com.acsoft.savepassword.presentation.AccountViewModelFactory
 import com.acsoft.savepassword.repository.AccountRepositoryImpl
 import com.acsoft.savepassword.ui.adapters.AccountAdapter
-import kotlin.collections.ArrayList
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
+@AndroidEntryPoint
+class AccountsFragment : Fragment(),AccountAdapter.OnAccountClickListener {
 
-class PasswordsFragment : Fragment(),AccountAdapter.OnAccountClickListener {
+    @Inject
+    lateinit var accountDao: AccountDao
 
     private lateinit var binding: FragmentAccountsBinding
 
@@ -49,7 +54,6 @@ class PasswordsFragment : Fragment(),AccountAdapter.OnAccountClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentAccountsBinding.bind(view)
-
 
         showAccounts()
         searchAccount()
