@@ -25,4 +25,5 @@ object AppModule {
     @Singleton
     @Provides
     fun provideAccountDao(db:AppDatabase) = db.AccountDao()
+
 }

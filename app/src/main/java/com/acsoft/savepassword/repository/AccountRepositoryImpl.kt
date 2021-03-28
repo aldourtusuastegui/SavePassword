@@ -3,8 +3,9 @@ package com.acsoft.savepassword.repository
 import com.acsoft.savepassword.data.local.LocalAccountDataSource
 import com.acsoft.savepassword.data.model.Account
 import kotlinx.coroutines.flow.Flow
+import javax.inject.Inject
 
-class AccountRepositoryImpl(private val localDataSource: LocalAccountDataSource): AccountRepository {
+class AccountRepositoryImpl @Inject constructor(private val localDataSource: LocalAccountDataSource): AccountRepository {
 
     override fun getAllAccounts(): Flow<List<Account>> {
        return localDataSource.getAllAccounts()

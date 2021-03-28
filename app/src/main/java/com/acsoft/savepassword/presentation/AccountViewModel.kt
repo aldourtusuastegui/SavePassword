@@ -1,5 +1,6 @@
 package com.acsoft.savepassword.presentation
 
+import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.asLiveData
@@ -8,7 +9,7 @@ import com.acsoft.savepassword.data.model.Account
 import com.acsoft.savepassword.repository.AccountRepository
 import kotlinx.coroutines.launch
 
-class AccountViewModel(private val accountRepository: AccountRepository) : ViewModel() {
+class AccountViewModel @ViewModelInject constructor(private val accountRepository: AccountRepository) : ViewModel() {
 
     fun getAccountList() = accountRepository.getAllAccounts().asLiveData()
 
@@ -42,9 +43,9 @@ class AccountViewModel(private val accountRepository: AccountRepository) : ViewM
 
 }
 
-
+/*
 class AccountViewModelFactory(private val repo: AccountRepository) : ViewModelProvider.Factory {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         return modelClass.getConstructor(AccountRepository::class.java).newInstance(repo)
     }
-}
+}*/

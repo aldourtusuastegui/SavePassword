@@ -12,33 +12,21 @@ import androidx.activity.viewModels
 import androidx.core.view.get
 import com.acsoft.savepassword.R
 import com.acsoft.savepassword.application.AppConstants
-import com.acsoft.savepassword.data.local.AppDatabase
-import com.acsoft.savepassword.data.local.LocalAccountDataSource
 import com.acsoft.savepassword.data.model.Account
 import com.acsoft.savepassword.databinding.ActivityDetailBinding
 import com.acsoft.savepassword.presentation.AccountViewModel
-import com.acsoft.savepassword.presentation.AccountViewModelFactory
-import com.acsoft.savepassword.repository.AccountRepositoryImpl
 import com.acsoft.savepassword.utils.copyToClipboard
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class DetailActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityDetailBinding
 
     private val requestCode = 0
 
-    private val viewModel by viewModels<AccountViewModel> {
-        AccountViewModelFactory(
-                AccountRepositoryImpl(
-                        LocalAccountDataSource(
-                                AppDatabase.getDatabase(
-                                        this
-                                ).AccountDao()
-                        )
-                )
-        )
-    }
+    private val viewModel by viewModels<AccountViewModel>()
 
     private var account: Account? = null
     private var isFavorite: Boolean = false

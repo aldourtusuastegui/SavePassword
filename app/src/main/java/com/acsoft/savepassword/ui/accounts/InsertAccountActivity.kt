@@ -9,32 +9,20 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.acsoft.savepassword.R
 import com.acsoft.savepassword.application.AppConstants
-import com.acsoft.savepassword.data.local.AppDatabase
-import com.acsoft.savepassword.data.local.LocalAccountDataSource
 import com.acsoft.savepassword.data.model.Account
 import com.acsoft.savepassword.databinding.ActivityInsertAccountBinding
 import com.acsoft.savepassword.presentation.AccountViewModel
-import com.acsoft.savepassword.presentation.AccountViewModelFactory
-import com.acsoft.savepassword.repository.AccountRepositoryImpl
 import com.acsoft.savepassword.utils.getDateFormat
 import com.acsoft.savepassword.utils.upperCase
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class InsertAccountActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityInsertAccountBinding
     private var favorite:Boolean = false
 
-    private val viewModel by viewModels<AccountViewModel> {
-        AccountViewModelFactory(
-            AccountRepositoryImpl(
-                LocalAccountDataSource(
-                    AppDatabase.getDatabase(
-                        this
-                    ).AccountDao()
-                )
-            )
-        )
-    }
+    private val viewModel by viewModels<AccountViewModel>()
 
     private var action: String? = null
     private var account: Account? = null
